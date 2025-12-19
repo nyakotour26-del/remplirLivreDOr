@@ -146,28 +146,28 @@
         .main-content-row {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 15px;
         }
         
         /* === TITRE À GAUCHE (DESKTOP) === */
         .title-section {
             width: 100%;
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             background: linear-gradient(to right, #FFD700, #FFEC8B);
             border-radius: 15px;
             border: 4px solid #DAA520;
             box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .main-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #8B4513;
             text-shadow: 1px 1px 0 #FFD700;
-            margin-bottom: 8px;
-            padding: 10px;
+            margin-bottom: 5px;
+            padding: 8px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             display: inline-block;
@@ -175,27 +175,25 @@
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #8B4513;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         
         .tour-subtitle {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #8B4513;
             font-style: italic;
         }
         
         .theme {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #8B4513;
-            margin-top: 15px;
-            padding: 10px;
+            margin-top: 10px;
+            padding: 8px;
             background-color: rgba(255, 215, 0, 0.3);
             border-radius: 8px;
-            border-left: 3px solid #8B4513;
-            border-right: 3px solid #8B4513;
             font-weight: bold;
         }
         
@@ -203,40 +201,60 @@
         .content-section {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
         
         .instructions {
             background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
+            padding: 15px;
             border-radius: 15px;
             border-left: 5px solid #FFD700;
             border-right: 5px solid #FFD700;
+            text-align: center;
         }
         
         .instructions h2 {
             color: #8B4513;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
         
         .instructions p {
             color: #5D4037;
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 5px;
         }
         
-        .mission-description {
-            font-style: italic;
-            color: #8B4513;
-            text-align: center;
-            margin-top: 15px;
-            padding: 10px;
-            background-color: rgba(255, 215, 0, 0.2);
-            border-radius: 8px;
+        .share-ideas {
+            background-color: rgba(255, 215, 0, 0.15);
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 10px;
+            text-align: left;
             border-left: 3px solid #8B4513;
-            border-right: 3px solid #8B4513;
+        }
+        
+        .share-ideas h4 {
+            color: #8B4513;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .ideas-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .idea-tag {
+            background-color: rgba(139, 69, 19, 0.1);
+            color: #5D4037;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #DAA520;
         }
         
         /* === FORMULAIRES === */
@@ -248,9 +266,9 @@
         .options-title {
             text-align: center;
             color: #8B4513;
-            font-size: 1.6rem;
-            margin: 0 0 15px;
-            padding: 10px;
+            font-size: 1.4rem;
+            margin: 0 0 10px;
+            padding: 8px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             border: 2px solid #DAA520;
@@ -260,13 +278,13 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .option-card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 20px;
+            padding: 18px;
             box-shadow: 0 8px 20px rgba(218, 165, 32, 0.15);
             border-top: 4px solid #DAA520;
             border-bottom: 4px solid #FFD700;
@@ -281,24 +299,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         
         .language-badge {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: #8B4513;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 20px;
             background: #FFD700;
             border: 1px solid #DAA520;
         }
         
         .photo-badge {
-            font-size: 0.85rem;
-            padding: 5px 10px;
+            font-size: 0.8rem;
+            padding: 4px 8px;
             border-radius: 20px;
             background-color: #8B4513;
             color: #FFD700;
@@ -312,48 +330,49 @@
         
         .option-card h3 {
             color: #8B4513;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
         
         .option-card p {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #5D4037;
-            line-height: 1.5;
-            font-size: 0.95rem;
+            line-height: 1.4;
+            font-size: 0.9rem;
         }
         
         .features {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .feature {
             display: flex;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             color: #5D4037;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .feature i {
             color: #DAA520;
-            margin-right: 10px;
-            min-width: 16px;
+            margin-right: 8px;
+            min-width: 14px;
+            font-size: 0.9rem;
         }
         
         .btn {
             display: block;
             background: linear-gradient(to right, #DAA520, #FFD700);
             color: #8B4513;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
             transition: all 0.3s;
             border: 2px solid #8B4513;
-            font-size: 1rem;
-            margin-top: 10px;
+            font-size: 0.95rem;
+            margin-top: 8px;
         }
         
         .btn:hover {
@@ -365,8 +384,8 @@
         /* === CONTACTS === */
         .contacts-section {
             text-align: center;
-            margin: 20px 0;
-            padding: 15px;
+            margin: 15px 0;
+            padding: 12px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             border: 2px solid #DAA520;
@@ -374,14 +393,14 @@
         
         .contacts-section h3 {
             color: #8B4513;
-            margin-bottom: 12px;
-            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
         
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
         
@@ -389,16 +408,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             color: #8B4513;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
             background-color: rgba(255, 215, 0, 0.3);
             transition: all 0.3s;
             width: 100%;
-            max-width: 280px;
+            max-width: 250px;
         }
         
         .contact-link:hover {
@@ -407,22 +426,22 @@
         }
         
         .contact-link i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         /* === LIEN RETOUR === */
         .back-link {
             text-align: center;
-            margin-top: 15px;
-            margin-bottom: 10px;
+            margin-top: 12px;
+            margin-bottom: 8px;
         }
         
         .back-link a {
             color: #8B4513;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
-            padding: 10px 15px;
+            font-size: 0.95rem;
+            padding: 8px 12px;
             border-radius: 20px;
             background-color: rgba(255, 215, 0, 0.3);
             transition: all 0.3s;
@@ -456,63 +475,56 @@
                 max-width: 100%;
             }
             
-            /* En tablette, on garde la structure colonne pour mieux utiliser l'espace */
             .main-content-row {
                 flex-direction: column;
-                gap: 25px;
-                margin-bottom: 25px;
+                gap: 20px;
+                margin-bottom: 20px;
             }
             
             .title-section {
-                width: 100%;
-                margin-bottom: 25px;
-                padding: 20px;
+                padding: 15px;
+                margin-bottom: 20px;
             }
             
             .main-title {
-                font-size: 2.3rem;
-                padding: 15px 25px;
+                font-size: 2rem;
+                padding: 12px 20px;
             }
             
             .subtitle {
-                font-size: 1.4rem;
-            }
-            
-            .tour-subtitle {
                 font-size: 1.2rem;
             }
             
-            .theme {
-                font-size: 1.3rem;
-                margin-top: 20px;
-                padding: 15px;
+            .tour-subtitle {
+                font-size: 1rem;
             }
             
-            .content-section {
-                width: 100%;
+            .theme {
+                font-size: 1.1rem;
+                margin-top: 15px;
+                padding: 10px;
             }
             
             .instructions {
-                padding: 25px;
+                padding: 20px;
             }
             
             .instructions h2 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             
             .instructions p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
-            .mission-description {
-                font-size: 1.1rem;
+            .share-ideas {
                 padding: 15px;
             }
             
             /* FORMULAIRES EN PLEINE LARGEUR SUR TABLETTE */
             .form-options {
                 flex-direction: row;
-                gap: 25px;
+                gap: 20px;
             }
             
             .option-card {
@@ -523,38 +535,38 @@
             }
             
             .option-card h3 {
-                font-size: 1.5rem;
-                min-height: 60px;
+                font-size: 1.3rem;
+                min-height: 50px;
             }
             
             .option-card p {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
                 flex-grow: 1;
             }
             
             .features {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             
             .feature {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .options-title {
-                font-size: 1.9rem;
-                margin-bottom: 25px;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
             }
             
             .contact-links {
                 flex-direction: row;
                 justify-content: center;
-                gap: 20px;
+                gap: 15px;
             }
             
             .contact-link {
                 width: auto;
-                min-width: 220px;
-                padding: 12px 20px;
+                min-width: 200px;
+                padding: 10px 15px;
             }
         }
         
@@ -572,7 +584,7 @@
             }
             
             .main-content {
-                padding: 25px;
+                padding: 20px;
             }
             
             .container {
@@ -582,65 +594,63 @@
             .main-content-row {
                 flex-direction: row;
                 align-items: flex-start;
-                gap: 30px;
-                margin-bottom: 30px;
+                gap: 25px;
+                margin-bottom: 20px;
             }
             
             .title-section {
                 width: 30%;
-                max-width: 300px;
+                max-width: 280px;
                 margin-bottom: 0;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                padding: 25px 20px;
+                padding: 20px;
             }
             
             .main-title {
-                font-size: 2.2rem;
-                padding: 15px 20px;
-                margin-bottom: 15px;
+                font-size: 1.9rem;
+                padding: 12px 18px;
+                margin-bottom: 12px;
             }
             
             .subtitle {
-                font-size: 1.3rem;
-                margin-bottom: 8px;
+                font-size: 1.2rem;
+                margin-bottom: 6px;
             }
             
             .tour-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .theme {
-                font-size: 1.2rem;
-                margin-top: 20px;
-                padding: 12px;
+                font-size: 1.1rem;
+                margin-top: 15px;
+                padding: 10px;
             }
             
             .content-section {
                 flex: 1;
-                gap: 25px;
+                gap: 20px;
             }
             
             .instructions {
-                padding: 25px;
+                padding: 20px;
                 text-align: left;
             }
             
             .instructions h2 {
-                font-size: 1.7rem;
+                font-size: 1.5rem;
                 text-align: left;
             }
             
             .instructions p {
-                font-size: 1.05rem;
+                font-size: 1rem;
             }
             
-            .mission-description {
-                text-align: left;
-                font-size: 1rem;
-                margin-top: 20px;
+            .share-ideas {
+                margin-top: 15px;
             }
             
             .language-buttons {
@@ -654,34 +664,34 @@
             }
             
             .options-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 text-align: left;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             
             .form-options {
                 flex-direction: row;
-                gap: 25px;
+                gap: 20px;
             }
             
             .option-card {
                 flex: 1;
-                padding: 25px;
+                padding: 20px;
             }
             
             .option-card h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             
             .contact-links {
                 flex-direction: row;
                 justify-content: center;
-                gap: 25px;
+                gap: 20px;
             }
             
             .contact-link {
                 width: auto;
-                min-width: 200px;
+                min-width: 180px;
             }
         }
         
@@ -702,42 +712,45 @@
             
             .title-section {
                 width: 25%;
-                max-width: 280px;
+                max-width: 260px;
             }
             
             .main-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
         }
         
         /* === VERSION MOBILE (jusqu'à 599px) === */
         @media (max-width: 599px) {
             .title-section {
-                padding: 12px;
+                padding: 10px;
             }
             
             .main-title {
-                font-size: 1.8rem;
-                padding: 8px 12px;
-                margin-bottom: 5px;
+                font-size: 1.6rem;
+                padding: 6px 10px;
+                margin-bottom: 4px;
             }
             
             .subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 3px;
+                font-size: 1rem;
+                margin-bottom: 2px;
             }
             
             .tour-subtitle {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
             
             .theme {
-                font-size: 1rem;
-                margin-top: 10px;
-                padding: 8px;
+                font-size: 0.9rem;
+                margin-top: 8px;
+                padding: 6px;
             }
             
-            /* Sur mobile très petit, on peut réduire les drapeaux */
+            .share-ideas {
+                padding: 10px;
+            }
+            
             @media (max-width: 400px) {
                 .flags-column {
                     width: 70px;
@@ -785,8 +798,8 @@
         .cross-icon {
             color: #8B4513;
             text-align: center;
-            margin: 10px 0;
-            font-size: 1.2rem;
+            margin: 8px 0;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -840,42 +853,52 @@
                     <!-- Contenu à droite -->
                     <div class="content-section">
                         <section class="instructions">
-                            <h2>Partagez un message dans notre livre d'or !</h2>
-                            <p>Nous sommes actuellement en tournée à travers l'Europe en 2026, partageant notre culture malgache à travers des prestations artistiques et un message d'espérance.</p>
-                            <p>Votre témoignage, vos encouragements et vos retours sont précieux pour notre ministère. Partagez avec nous comment notre rencontre a touché votre cœur.</p>
-                            <div class="mission-description">
-                                Nous combinons prestations culturelles et partage de l'Évangile pour témoigner de l'Amour de Dieu à travers nos traditions.
+                            <h2>Partagez votre témoignage avec nous</h2>
+                            <p>Votre expérience, vos encouragements et vos prières sont précieux pour notre ministère. Chaque témoignage nous fortifie dans notre mission.</p>
+                            
+                            <div class="share-ideas">
+                                <h4>Vous pouvez partager :</h4>
+                                <div class="ideas-list">
+                                    <span class="idea-tag">Votre expérience spirituelle</span>
+                                    <span class="idea-tag">Un moment touchant</span>
+                                    <span class="idea-tag">Un souvenir de réunion</span>
+                                    <span class="idea-tag">Une prière spéciale</span>
+                                    <span class="idea-tag">Un encouragement</span>
+                                    <span class="idea-tag">Un témoignage personnel</span>
+                                    <span class="idea-tag">Ce que Dieu a fait</span>
+                                    <span class="idea-tag">Vos impressions</span>
+                                </div>
                             </div>
                         </section>
                         
                         <section class="form-section">
-                            <h2 class="options-title">Choisissez votre formulaire de témoignage</h2>
+                            <h2 class="options-title">Choisissez comment partager</h2>
                             
                             <div class="form-options">
                                 <!-- Option 1 - Sans photo -->
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">Français</span>
-                                        <span class="photo-badge no-photo">Message</span>
+                                        <span class="photo-badge no-photo">Témoignage écrit</span>
                                     </div>
-                                    <h3>Témoignage écrit</h3>
-                                    <p>Partagez un message d'encouragement ou un témoignage. Aucune connexion requise.</p>
+                                    <h3>Témoignage de foi</h3>
+                                    <p>Partagez votre expérience spirituelle, vos prières ou vos encouragements par écrit.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Simple et rapide</span>
+                                            <span>Simple et rapide à remplir</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Partagez votre expérience</span>
+                                            <span>Aucune connexion requise</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Vos encouragements nous touchent</span>
+                                            <span>Option : rester anonyme</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Option pour partager vos coordonnées</span>
+                                            <span>Option : partager vos coordonnées</span>
                                         </div>
                                     </div>
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="btn">Partager mon témoignage</a>
@@ -885,26 +908,26 @@
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">Français</span>
-                                        <span class="photo-badge">Avec photo</span>
+                                        <span class="photo-badge">Témoignage visuel</span>
                                     </div>
-                                    <h3>Témoignage avec photo</h3>
-                                    <p>Partagez un message et une photo de nos prestations. Connexion Google nécessaire.</p>
+                                    <h3>Souvenir béni</h3>
+                                    <p>Partagez un témoignage accompagné d'une photo de nos rencontres ou moments spirituels.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Partagez vos photos des prestations</span>
+                                            <span>Ajoutez une photo mémorable</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Souvenirs de nos rencontres</span>
+                                            <span>Partagez vos souvenirs visuels</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Moments culturels et spirituels</span>
+                                            <span>Option : rester anonyme</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Option pour partager vos coordonnées</span>
+                                            <span>Option : partager vos coordonnées</span>
                                         </div>
                                     </div>
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform?usp=header" target="_blank" class="btn">Partager avec photo</a>
@@ -915,7 +938,7 @@
                 </div>
                 
                 <div class="contacts-section">
-                    <h3>Contactez-nous</h3>
+                    <h3>Restons en contact</h3>
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
                             <i class="fab fa-facebook"></i>
@@ -923,16 +946,13 @@
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
-                            <span>nyakotour26@gmail.com</span>
+                            <span>Pour la prière</span>
                         </a>
                     </div>
-                    <p style="margin-top: 15px; color: #8B4513; font-size: 0.9rem;">
-                        Culture malgache & Message d'Espérance
-                    </p>
                 </div>
                 
                 <div class="back-link">
-                    <a href="#" id="backToSelectorFr">← Changer de langue / Change language</a>
+                    <a href="#" id="backToSelectorFr">← Changer de langue</a>
                 </div>
             </div>
         </section>
@@ -953,42 +973,52 @@
                     <!-- Contenu à droite -->
                     <div class="content-section">
                         <section class="instructions">
-                            <h2>Share a message in our guestbook!</h2>
-                            <p>We are currently touring across Europe in 2026, sharing Malagasy culture through artistic performances and a message of hope.</p>
-                            <p>Your testimony, encouragements and feedback are valuable to our ministry. Share with us how our meeting touched your heart.</p>
-                            <div class="mission-description">
-                                We combine cultural performances and Gospel sharing to testify of God's Love through our traditions.
+                            <h2>Share your testimony with us</h2>
+                            <p>Your experience, encouragements and prayers are valuable to our ministry. Each testimony strengthens us in our mission.</p>
+                            
+                            <div class="share-ideas">
+                                <h4>You can share:</h4>
+                                <div class="ideas-list">
+                                    <span class="idea-tag">Your spiritual experience</span>
+                                    <span class="idea-tag">A touching moment</span>
+                                    <span class="idea-tag">A meeting memory</span>
+                                    <span class="idea-tag">A special prayer</span>
+                                    <span class="idea-tag">An encouragement</span>
+                                    <span class="idea-tag">A personal testimony</span>
+                                    <span class="idea-tag">What God has done</span>
+                                    <span class="idea-tag">Your impressions</span>
+                                </div>
                             </div>
                         </section>
                         
                         <section class="form-section">
-                            <h2 class="options-title">Choose your testimony form</h2>
+                            <h2 class="options-title">Choose how to share</h2>
                             
                             <div class="form-options">
                                 <!-- Option 1 - Without photo -->
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">English</span>
-                                        <span class="photo-badge no-photo">Message</span>
+                                        <span class="photo-badge no-photo">Written testimony</span>
                                     </div>
-                                    <h3>Written testimony</h3>
-                                    <p>Share a message of encouragement or a testimony. No connection required.</p>
+                                    <h3>Faith Testimony</h3>
+                                    <p>Share your spiritual experience, prayers or encouragements in writing.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Simple and quick</span>
+                                            <span>Simple and quick to fill</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Share your experience</span>
+                                            <span>No connection required</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Your encouragements touch us</span>
+                                            <span>Option: remain anonymous</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Option to share your contact details</span>
+                                            <span>Option: share your contact details</span>
                                         </div>
                                     </div>
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="btn">Share my testimony</a>
@@ -998,26 +1028,26 @@
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">English</span>
-                                        <span class="photo-badge">With photo</span>
+                                        <span class="photo-badge">Visual testimony</span>
                                     </div>
-                                    <h3>Testimony with photo</h3>
-                                    <p>Share a message and a photo from our performances. Google connection needed.</p>
+                                    <h3>Blessed Memory</h3>
+                                    <p>Share a testimony accompanied by a photo from our meetings or spiritual moments.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Share photos from our performances</span>
+                                            <span>Add a memorable photo</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Memories of our meetings</span>
+                                            <span>Share your visual memories</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Cultural and spiritual moments</span>
+                                            <span>Option: remain anonymous</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Option to share your contact details</span>
+                                            <span>Option: share your contact details</span>
                                         </div>
                                     </div>
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="btn">Share with photo</a>
@@ -1028,7 +1058,7 @@
                 </div>
                 
                 <div class="contacts-section">
-                    <h3>Contact us</h3>
+                    <h3>Stay in touch</h3>
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
                             <i class="fab fa-facebook"></i>
@@ -1036,16 +1066,13 @@
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
-                            <span>nyakotour26@gmail.com</span>
+                            <span>For prayer</span>
                         </a>
                     </div>
-                    <p style="margin-top: 15px; color: #8B4513; font-size: 0.9rem;">
-                        Malagasy Culture & Message of Hope
-                    </p>
                 </div>
                 
                 <div class="back-link">
-                    <a href="#" id="backToSelectorEn">← Change language / Changer de langue</a>
+                    <a href="#" id="backToSelectorEn">← Change language</a>
                 </div>
             </div>
         </section>
