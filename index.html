@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre d'or - Ny ako Madagascar Europe Tour 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #FFD700, #FFEC8B);
+            color: #333;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        /* === ÉCRAN DE SÉLECTION DE LANGUE === */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .language-box {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            border: 5px solid #FFD700;
+        }
+
+        .language-box h1 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .language-box p {
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .language-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid #DAA520;
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn:hover {
+            background: linear-gradient(to right, #FFD700, #DAA520);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .lang-btn i {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: #8B4513;
+        }
+
+        .lang-btn span {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        /* === PAGE PRINCIPALE === */
+        .main-page {
+            display: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* === EN-TÊTE === */
+        header {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(to right, #FFD700, #FFEC8B);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 4px solid #DAA520;
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
+        }
+        
+        .main-title {
+            font-size: 2.2rem;
+            color: #8B4513;
+            text-shadow: 1px 1px 0 #FFD700;
+            margin-bottom: 8px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-block;
+            border: 2px solid #DAA520;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .tour-subtitle {
+            font-size: 1rem;
+            color: #8B4513;
+            font-style: italic;
+        }
+        
+        /* === DRAPEAUX === */
+        .flags-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            border: 2px solid #DAA520;
+        }
+        
+        .flag {
+            width: 50px;
+            height: 35px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border: 1px solid #FFD700;
+        }
+        
+        /* === INSTRUCTIONS === */
+        .instructions {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #FFD700;
+            border-right: 5px solid #FFD700;
+        }
+        
+        .instructions h2 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .instructions p {
+            color: #5D4037;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* === FORMULAIRES === */
+        .options-title {
+            text-align: center;
+            color: #8B4513;
+            font-size: 1.6rem;
+            margin: 0 0 10px;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            border: 2px solid #DAA520;
+        }
+        
+        .form-order-note {
+            text-align: center;
+            color: #8B4513;
+            font-size: 0.9rem;
+            margin: 0 0 20px;
+            font-style: italic;
+            padding: 8px;
+            background-color: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .form-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .option-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 8px 20px rgba(218, 165, 32, 0.15);
+            border-top: 4px solid #DAA520;
+            border-bottom: 4px solid #FFD700;
+            transition: transform 0.3s;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .language-badge {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8B4513;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #FFD700;
+            border: 1px solid #DAA520;
+        }
+        
+        .photo-badge {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: #8B4513;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .photo-badge.no-photo {
+            background-color: #5D4037;
+            color: #FFEC8B;
+        }
+        
+        .option-card h3 {
+            color: #8B4513;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .option-card p {
+            margin-bottom: 15px;
+            color: #5D4037;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .features {
+            margin-bottom: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #5D4037;
+            font-size: 0.9rem;
+        }
+        
+        .feature i {
+            color: #DAA520;
+            margin-right: 10px;
+            min-width: 16px;
+        }
+        
+        .btn {
+            display: block;
+            background: linear-gradient(to right, #DAA520, #FFD700);
+            color: #8B4513;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8B4513;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #8B4513, #DAA520);
+            color: #FFD700;
+            transform: scale(1.03);
+        }
+        
+        /* === CONTACTS === */
+        .contacts-section {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            border: 2px solid #DAA520;
+        }
+        
+        .contacts-section h3 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .contact-link:hover {
+            background-color: rgba(218, 165, 32, 0.5);
+            transform: translateY(-3px);
+        }
+        
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+        
+        /* === LIEN RETOUR === */
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .back-link a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .back-link a:hover {
+            background-color: rgba(218, 165, 32, 0.5);
+            transform: translateY(-3px);
+        }
+        
+        /* === VERSION DESKTOP (ÉCRAN LARGE) === */
+        @media (min-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            header {
+                padding: 30px 25px;
+                margin-bottom: 30px;
+            }
+            
+            .main-title {
+                font-size: 2.8rem;
+                padding: 15px 30px;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .tour-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .flags-container {
+                gap: 15px;
+                padding: 20px;
+                margin: 30px 0;
+            }
+            
+            .flag {
+                width: 60px;
+                height: 40px;
+            }
+            
+            .language-buttons {
+                flex-direction: row;
+                gap: 25px;
+            }
+            
+            .lang-btn {
+                width: 180px;
+                padding: 25px 20px;
+            }
+            
+            .instructions {
+                padding: 30px 25px;
+                margin-bottom: 30px;
+            }
+            
+            .instructions h2 {
+                font-size: 1.8rem;
+            }
+            
+            .instructions p {
+                font-size: 1.1rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .options-title {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .form-options {
+                flex-direction: row;
+                gap: 25px;
+            }
+            
+            .option-card {
+                flex: 1;
+                padding: 30px 25px;
+            }
+            
+            .option-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .contact-links {
+                flex-direction: row;
+                justify-content: center;
+                gap: 25px;
+            }
+            
+            .contact-link {
+                width: auto;
+                min-width: 200px;
+            }
+        }
+        
+        /* === VERSION TRÈS GRAND ÉCRAN === */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+            
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .flags-container {
+                gap: 20px;
+            }
+            
+            .flag {
+                width: 70px;
+                height: 45px;
+            }
+        }
+        
+        /* === ANIMATIONS SIMPLES === */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .option-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .option-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Écran de sélection de langue -->
+    <section class="language-selector" id="languageSelector">
+        <div class="language-box">
+            <h1>Guestbook / Livre d'Or</h1>
+            <p>Ny ako Madagascar - Europe Tour 2026</p>
+            <p>Please choose your language / Veuillez choisir votre langue :</p>
+            <div class="language-buttons">
+                <a href="#" class="lang-btn" id="englishBtn">
+                    <i class="fas fa-globe-europe"></i>
+                    <span>English</span>
+                </a>
+                <a href="#" class="lang-btn" id="frenchBtn">
+                    <i class="fas fa-globe-europe"></i>
+                    <span>Français</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page en français -->
+    <section class="main-page" id="frenchPage" data-lang="fr">
+        <div class="container">
+            <header>
+                <h1 class="main-title">LIVRE D'OR</h1>
+                <p class="subtitle">Ny ako Madagascar</p>
+                <p class="tour-subtitle">Tournée Européenne 2026</p>
+            </header>
+            
+            <div class="flags-container">
+                <img src="https://flagcdn.com/w80/fr.png" alt="France" class="flag" title="France">
+                <img src="https://flagcdn.com/w80/de.png" alt="Allemagne" class="flag" title="Allemagne">
+                <img src="https://flagcdn.com/w80/ch.png" alt="Suisse" class="flag" title="Suisse">
+                <img src="https://flagcdn.com/w80/be.png" alt="Belgique" class="flag" title="Belgique">
+                <img src="https://flagcdn.com/w80/gb.png" alt="Angleterre" class="flag" title="Angleterre">
+                <img src="https://flagcdn.com/w80/gb-wls.png" alt="Pays de Galles" class="flag" title="Pays de Galles">
+                <img src="https://flagcdn.com/w80/no.png" alt="Norvège" class="flag" title="Norvège">
+            </div>
+            
+            <section class="instructions">
+                <h2>Laissez un message dans notre livre d'or !</h2>
+                <p>Nous sommes en pleine tournée exceptionnelle en Europe en 2026 ! Partagez avec nous vos impressions sur les concerts, vos moments préférés et vos photos. Choisissez le formulaire qui vous convient le mieux. Merci de faire partie de cette aventure !</p>
+            </section>
+            
+            <h2 class="options-title">Choisissez votre formulaire</h2>
+            <p class="form-order-note">(Nous vous recommandons d'abord le formulaire simple, puis celui avec photo)</p>
+            
+            <div class="form-options">
+                <!-- Option 1 - Sans photo -->
+                <div class="option-card">
+                    <div class="option-header">
+                        <span class="language-badge">Français</span>
+                        <span class="photo-badge no-photo">Sans photo</span>
+                    </div>
+                    <h3>Formulaire simple (recommandé)</h3>
+                    <p>Partagez simplement un message sans télécharger de photo. Aucune connexion requise.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Aucune connexion requise</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Rapide et simple</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Possibilité de rester anonyme</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Option pour partager vos coordonnées</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="btn">Remplir ce formulaire</a>
+                </div>
+                
+                <!-- Option 2 - Avec photo -->
+                <div class="option-card">
+                    <div class="option-header">
+                        <span class="language-badge">Français</span>
+                        <span class="photo-badge">Avec photo</span>
+                    </div>
+                    <h3>Formulaire avec photo</h3>
+                    <p>Partagez un message et une photo du concert ou d'un moment mémorable. Connexion Google nécessaire.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nécessite une connexion Google</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Partagez vos photos des concerts</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Possibilité de rester anonyme</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Option pour partager vos coordonnées</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform?usp=header" target="_blank" class="btn">Remplir ce formulaire</a>
+                </div>
+            </div>
+            
+            <div class="contacts-section">
+                <h3>Contactez-nous</h3>
+                <div class="contact-links">
+                    <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="mailto:nyakotour26@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>nyakotour26@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="back-link">
+                <a href="#" id="backToSelectorFr">← Changer de langue / Change language</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page en anglais -->
+    <section class="main-page" id="englishPage" data-lang="en">
+        <div class="container">
+            <header>
+                <h1 class="main-title">GUESTBOOK</h1>
+                <p class="subtitle">Ny ako Madagascar</p>
+                <p class="tour-subtitle">Europe Tour 2026</p>
+            </header>
+            
+            <div class="flags-container">
+                <img src="https://flagcdn.com/w80/fr.png" alt="France" class="flag" title="France">
+                <img src="https://flagcdn.com/w80/de.png" alt="Germany" class="flag" title="Germany">
+                <img src="https://flagcdn.com/w80/ch.png" alt="Switzerland" class="flag" title="Switzerland">
+                <img src="https://flagcdn.com/w80/be.png" alt="Belgium" class="flag" title="Belgium">
+                <img src="https://flagcdn.com/w80/gb.png" alt="England" class="flag" title="England">
+                <img src="https://flagcdn.com/w80/gb-wls.png" alt="Wales" class="flag" title="Wales">
+                <img src="https://flagcdn.com/w80/no.png" alt="Norway" class="flag" title="Norway">
+            </div>
+            
+            <section class="instructions">
+                <h2>Leave a message in our guestbook!</h2>
+                <p>We are currently on an exceptional tour across Europe in 2026! Share with us your thoughts on the concerts, your favorite moments, and your photos. Choose the form that suits you best. Thank you for being part of this adventure!</p>
+            </section>
+            
+            <h2 class="options-title">Choose your form</h2>
+            <p class="form-order-note">(We recommend the simple form first, then the one with photo)</p>
+            
+            <div class="form-options">
+                <!-- Option 1 - Without photo -->
+                <div class="option-card">
+                    <div class="option-header">
+                        <span class="language-badge">English</span>
+                        <span class="photo-badge no-photo">No photo</span>
+                    </div>
+                    <h3>Simple form (recommended)</h3>
+                    <p>Just share a message without uploading any photo. No connection required.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No connection required</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Quick and simple</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Can remain anonymous</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Option to share your contact details</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="btn">Fill this form</a>
+                </div>
+                
+                <!-- Option 2 - With photo -->
+                <div class="option-card">
+                    <div class="option-header">
+                        <span class="language-badge">English</span>
+                        <span class="photo-badge">With photo</span>
+                    </div>
+                    <h3>Form with photo upload</h3>
+                    <p>Share a message and a photo from the concert or a memorable moment. Google connection needed.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Requires Google connection</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Share your concert photos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Can remain anonymous</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Option to share your contact details</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="btn">Fill this form</a>
+                </div>
+            </div>
+            
+            <div class="contacts-section">
+                <h3>Contact us</h3>
+                <div class="contact-links">
+                    <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="mailto:nyakotour26@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>nyakotour26@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="back-link">
+                <a href="#" id="backToSelectorEn">← Change language / Changer de langue</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Sélection des éléments
+        const languageSelector = document.getElementById('languageSelector');
+        const frenchPage = document.getElementById('frenchPage');
+        const englishPage = document.getElementById('englishPage');
+        const englishBtn = document.getElementById('englishBtn');
+        const frenchBtn = document.getElementById('frenchBtn');
+        const backToSelectorFr = document.getElementById('backToSelectorFr');
+        const backToSelectorEn = document.getElementById('backToSelectorEn');
+
+        // Au chargement de la page, vérifier si une langue est déjà sélectionnée
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('guestbookLang');
+            
+            if (savedLang === 'fr') {
+                showFrenchPage();
+            } else if (savedLang === 'en') {
+                showEnglishPage();
+            }
+        });
+
+        // Événement pour le bouton Français
+        frenchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showFrenchPage();
+            localStorage.setItem('guestbookLang', 'fr');
+        });
+
+        // Événement pour le bouton English
+        englishBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showEnglishPage();
+            localStorage.setItem('guestbookLang', 'en');
+        });
+
+        // Événements pour les liens de retour
+        backToSelectorFr.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLanguageSelector();
+            localStorage.removeItem('guestbookLang');
+        });
+
+        backToSelectorEn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLanguageSelector();
+            localStorage.removeItem('guestbookLang');
+        });
+
+        // Fonctions pour afficher les pages
+        function showFrenchPage() {
+            languageSelector.style.display = 'none';
+            frenchPage.style.display = 'block';
+            englishPage.style.display = 'none';
+            document.title = "Livre d'or - Ny ako Madagascar Tournée Europe 2026";
+        }
+
+        function showEnglishPage() {
+            languageSelector.style.display = 'none';
+            frenchPage.style.display = 'none';
+            englishPage.style.display = 'block';
+            document.title = "Guestbook - Ny ako Madagascar Europe Tour 2026";
+        }
+
+        function showLanguageSelector() {
+            languageSelector.style.display = 'flex';
+            frenchPage.style.display = 'none';
+            englishPage.style.display = 'none';
+            document.title = "Guestbook / Livre d'Or - Ny ako Madagascar Europe Tour 2026";
+        }
+    </script>
+</body>
+</html>
