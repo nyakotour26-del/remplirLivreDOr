@@ -187,6 +187,18 @@
             font-style: italic;
         }
         
+        .theme {
+            font-size: 1.1rem;
+            color: #8B4513;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            border-left: 3px solid #8B4513;
+            border-right: 3px solid #8B4513;
+            font-weight: bold;
+        }
+        
         /* === INSTRUCTIONS ET CONTENU === */
         .content-section {
             display: flex;
@@ -213,6 +225,18 @@
             color: #5D4037;
             font-size: 1rem;
             line-height: 1.6;
+        }
+        
+        .mission-description {
+            font-style: italic;
+            color: #8B4513;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid #8B4513;
+            border-right: 3px solid #8B4513;
         }
         
         /* === FORMULAIRES === */
@@ -464,6 +488,12 @@
                 font-size: 1.1rem;
             }
             
+            .theme {
+                font-size: 1.2rem;
+                margin-top: 20px;
+                padding: 12px;
+            }
+            
             .content-section {
                 flex: 1;
                 gap: 25px;
@@ -481,6 +511,12 @@
             
             .instructions p {
                 font-size: 1.05rem;
+            }
+            
+            .mission-description {
+                text-align: left;
+                font-size: 1rem;
+                margin-top: 20px;
             }
             
             .language-buttons {
@@ -570,6 +606,12 @@
             .tour-subtitle {
                 font-size: 0.9rem;
             }
+            
+            .theme {
+                font-size: 1rem;
+                margin-top: 10px;
+                padding: 8px;
+            }
         }
         
         /* === ANIMATIONS === */
@@ -600,6 +642,14 @@
             animation: float 3s ease-in-out infinite reverse;
             animation-delay: 0.5s;
         }
+        
+        /* === CROIX DÉCORATIVE === */
+        .cross-icon {
+            color: #8B4513;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
@@ -619,9 +669,10 @@
         <!-- Écran de sélection de langue -->
         <section class="language-selector" id="languageSelector">
             <div class="language-box">
-                <h1>Guestbook / Livre d'Or</h1>
-                <p>Ny ako Madagascar - Europe Tour 2026</p>
-                <p>Please choose your language / Veuillez choisir votre langue :</p>
+                <h1>Livre d'Or / Guestbook</h1>
+                <p>Groupe Évangélique Ny ako Madagascar</p>
+                <p>Tournée Europe 2026</p>
+                <p>Que Dieu vous bénisse / God bless you</p>
                 <div class="language-buttons">
                     <a href="#" class="lang-btn" id="englishBtn">
                         <i class="fas fa-globe-europe"></i>
@@ -643,47 +694,53 @@
                     <div class="title-section">
                         <h1 class="main-title">LIVRE D'OR</h1>
                         <p class="subtitle">Ny ako Madagascar</p>
-                        <p class="tour-subtitle">Tournée Européenne 2026</p>
+                        <p class="tour-subtitle">Tournée Europe 2026</p>
+                        <div class="cross-icon">✝</div>
+                        <div class="theme">"Nos sources sont en Toi"</div>
                     </div>
                     
                     <!-- Contenu à droite -->
                     <div class="content-section">
                         <section class="instructions">
-                            <h2>Laissez un message dans notre livre d'or !</h2>
-                            <p>Nous sommes en pleine tournée exceptionnelle en Europe en 2026 ! Partagez avec nous vos impressions sur les concerts, vos moments préférés et vos photos. Choisissez le formulaire qui vous convient le mieux. Merci de faire partie de cette aventure !</p>
+                            <h2>Partagez un message dans notre livre d'or !</h2>
+                            <p>Nous sommes actuellement en tournée à travers l'Europe en 2026, partageant notre culture malgache à travers des prestations artistiques et un message d'espérance.</p>
+                            <p>Votre témoignage, vos encouragements et vos retours sont précieux pour notre ministère. Partagez avec nous comment notre rencontre a touché votre cœur.</p>
+                            <div class="mission-description">
+                                Nous combinons prestations culturelles et partage de l'Évangile pour témoigner de l'Amour de Dieu à travers nos traditions.
+                            </div>
                         </section>
                         
                         <section class="form-section">
-                            <h2 class="options-title">Choisissez votre formulaire</h2>
+                            <h2 class="options-title">Choisissez votre formulaire de témoignage</h2>
                             
                             <div class="form-options">
                                 <!-- Option 1 - Sans photo -->
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">Français</span>
-                                        <span class="photo-badge no-photo">Sans photo</span>
+                                        <span class="photo-badge no-photo">Message</span>
                                     </div>
-                                    <h3>Formulaire simple</h3>
-                                    <p>Partagez simplement un message sans télécharger de photo. Aucune connexion requise.</p>
+                                    <h3>Témoignage écrit</h3>
+                                    <p>Partagez un message d'encouragement ou un témoignage. Aucune connexion requise.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Aucune connexion requise</span>
+                                            <span>Simple et rapide</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Rapide et simple</span>
+                                            <span>Partagez votre expérience</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Possibilité de rester anonyme</span>
+                                            <span>Vos encouragements nous touchent</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Option pour partager vos coordonnées</span>
                                         </div>
                                     </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="btn">Remplir ce formulaire</a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="btn">Partager mon témoignage</a>
                                 </div>
                                 
                                 <!-- Option 2 - Avec photo -->
@@ -692,27 +749,27 @@
                                         <span class="language-badge">Français</span>
                                         <span class="photo-badge">Avec photo</span>
                                     </div>
-                                    <h3>Formulaire avec photo</h3>
-                                    <p>Partagez un message et une photo du concert ou d'un moment mémorable. Connexion Google nécessaire.</p>
+                                    <h3>Témoignage avec photo</h3>
+                                    <p>Partagez un message et une photo de nos prestations. Connexion Google nécessaire.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Nécessite une connexion Google</span>
+                                            <span>Partagez vos photos des prestations</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Partagez vos photos des concerts</span>
+                                            <span>Souvenirs de nos rencontres</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Possibilité de rester anonyme</span>
+                                            <span>Moments culturels et spirituels</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Option pour partager vos coordonnées</span>
                                         </div>
                                     </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform?usp=header" target="_blank" class="btn">Remplir ce formulaire</a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform?usp=header" target="_blank" class="btn">Partager avec photo</a>
                                 </div>
                             </div>
                         </section>
@@ -724,13 +781,16 @@
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
                             <i class="fab fa-facebook"></i>
-                            <span>Facebook</span>
+                            <span>Page Facebook</span>
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span>nyakotour26@gmail.com</span>
                         </a>
                     </div>
+                    <p style="margin-top: 15px; color: #8B4513; font-size: 0.9rem;">
+                        Culture malgache & Message d'Espérance
+                    </p>
                 </div>
                 
                 <div class="back-link">
@@ -748,46 +808,52 @@
                         <h1 class="main-title">GUESTBOOK</h1>
                         <p class="subtitle">Ny ako Madagascar</p>
                         <p class="tour-subtitle">Europe Tour 2026</p>
+                        <div class="cross-icon">✝</div>
+                        <div class="theme">"Our Source is in You"</div>
                     </div>
                     
                     <!-- Contenu à droite -->
                     <div class="content-section">
                         <section class="instructions">
-                            <h2>Leave a message in our guestbook!</h2>
-                            <p>We are currently on an exceptional tour across Europe in 2026! Share with us your thoughts on the concerts, your favorite moments, and your photos. Choose the form that suits you best. Thank you for being part of this adventure!</p>
+                            <h2>Share a message in our guestbook!</h2>
+                            <p>We are currently touring across Europe in 2026, sharing Malagasy culture through artistic performances and a message of hope.</p>
+                            <p>Your testimony, encouragements and feedback are valuable to our ministry. Share with us how our meeting touched your heart.</p>
+                            <div class="mission-description">
+                                We combine cultural performances and Gospel sharing to testify of God's Love through our traditions.
+                            </div>
                         </section>
                         
                         <section class="form-section">
-                            <h2 class="options-title">Choose your form</h2>
+                            <h2 class="options-title">Choose your testimony form</h2>
                             
                             <div class="form-options">
                                 <!-- Option 1 - Without photo -->
                                 <div class="option-card">
                                     <div class="option-header">
                                         <span class="language-badge">English</span>
-                                        <span class="photo-badge no-photo">No photo</span>
+                                        <span class="photo-badge no-photo">Message</span>
                                     </div>
-                                    <h3>Simple form</h3>
-                                    <p>Just share a message without uploading any photo. No connection required.</p>
+                                    <h3>Written testimony</h3>
+                                    <p>Share a message of encouragement or a testimony. No connection required.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>No connection required</span>
+                                            <span>Simple and quick</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Quick and simple</span>
+                                            <span>Share your experience</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Can remain anonymous</span>
+                                            <span>Your encouragements touch us</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Option to share your contact details</span>
                                         </div>
                                     </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="btn">Fill this form</a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="btn">Share my testimony</a>
                                 </div>
                                 
                                 <!-- Option 2 - With photo -->
@@ -796,27 +862,27 @@
                                         <span class="language-badge">English</span>
                                         <span class="photo-badge">With photo</span>
                                     </div>
-                                    <h3>Form with photo upload</h3>
-                                    <p>Share a message and a photo from the concert or a memorable moment. Google connection needed.</p>
+                                    <h3>Testimony with photo</h3>
+                                    <p>Share a message and a photo from our performances. Google connection needed.</p>
                                     <div class="features">
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Requires Google connection</span>
+                                            <span>Share photos from our performances</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Share your concert photos</span>
+                                            <span>Memories of our meetings</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Can remain anonymous</span>
+                                            <span>Cultural and spiritual moments</span>
                                         </div>
                                         <div class="feature">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Option to share your contact details</span>
                                         </div>
                                     </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="btn">Fill this form</a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="btn">Share with photo</a>
                                 </div>
                             </div>
                         </section>
@@ -828,13 +894,16 @@
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
                             <i class="fab fa-facebook"></i>
-                            <span>Facebook</span>
+                            <span>Facebook Page</span>
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span>nyakotour26@gmail.com</span>
                         </a>
                     </div>
+                    <p style="margin-top: 15px; color: #8B4513; font-size: 0.9rem;">
+                        Malagasy Culture & Message of Hope
+                    </p>
                 </div>
                 
                 <div class="back-link">
@@ -911,7 +980,7 @@
             languageSelector.style.display = 'flex';
             frenchPage.style.display = 'none';
             englishPage.style.display = 'none';
-            document.title = "Guestbook / Livre d'Or - Ny ako Madagascar Europe Tour 2026";
+            document.title = "Livre d'Or / Guestbook - Ny ako Madagascar Europe Tour 2026";
         }
     </script>
 </body>
