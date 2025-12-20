@@ -831,6 +831,8 @@
             .flags-column {
                 width: 80px;
                 padding: 25px 10px;
+                position: relative;
+                height: auto;
             }
             
             .flags-column .flag {
@@ -1134,6 +1136,50 @@
         
         /* === VERSION MOBILE (jusqu'à 599px) === */
         @media (max-width: 599px) {
+            /* Limiter la hauteur des drapeaux à celle du titre */
+            .flags-column {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: auto;
+                min-height: auto;
+                z-index: 10;
+                box-shadow: none;
+                border-right: none;
+                background: transparent;
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                padding: 8px;
+                border-bottom: 2px solid #DAA520;
+                background: rgba(139, 69, 19, 0.9);
+            }
+            
+            .flags-column::before {
+                display: none;
+            }
+            
+            .flags-column .flag {
+                width: 30px;
+                height: 22px;
+                margin: 0 4px;
+                border: 1px solid #FFD700;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            }
+            
+            /* Ajuster le contenu principal pour laisser de l'espace */
+            .main-content {
+                padding-top: 60px; /* Espace pour les drapeaux */
+                position: relative;
+            }
+            
+            /* Ajuster le sélecteur de langue */
+            .language-selector {
+                padding-top: 60px;
+                min-height: calc(100vh - 60px);
+            }
+            
+            /* Titre mobile */
             .title-section {
                 padding: 12px;
             }
@@ -1168,20 +1214,29 @@
                 padding: 8px;
             }
 
+            /* Masquer certaines fleurs en mobile */
             .flower-decoration {
                 display: none;
             }
             
             @media (max-width: 400px) {
                 .flags-column {
-                    width: 65px;
-                    padding: 15px 6px;
+                    padding: 6px;
                 }
                 
                 .flags-column .flag {
-                    width: 40px;
-                    height: 30px;
-                    margin-bottom: 12px;
+                    width: 25px;
+                    height: 18px;
+                    margin: 0 3px;
+                }
+                
+                .main-content {
+                    padding-top: 50px;
+                }
+                
+                .language-selector {
+                    padding-top: 50px;
+                    min-height: calc(100vh - 50px);
                 }
 
                 .idea-tag {
@@ -1200,6 +1255,28 @@
                 .lang-btn span {
                     font-size: 1.1rem;
                 }
+            }
+        }
+        
+        /* === VERSION TRÈS PETIT ÉCRAN === */
+        @media (max-width: 350px) {
+            .flags-column {
+                padding: 5px;
+            }
+            
+            .flags-column .flag {
+                width: 22px;
+                height: 16px;
+                margin: 0 2px;
+            }
+            
+            .main-content {
+                padding-top: 45px;
+            }
+            
+            .language-selector {
+                padding-top: 45px;
+                min-height: calc(100vh - 45px);
             }
         }
         
