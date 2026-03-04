@@ -352,7 +352,7 @@
             position: relative;
         }
         
-        /* ===== NOUVEAU STYLE LIVRE RÉALISTE ===== */
+        /* ===== STYLE LIVRE RÉALISTE CORRIGÉ ===== */
         .book-realistic {
             position: relative;
             width: 100%;
@@ -491,54 +491,56 @@
             border-radius: 50%;
         }
         
+        /* Marque-pages repositionnés pour ne pas cacher les données */
         .bookmark {
             position: absolute;
-            top: -5px;
-            right: 20px;
-            width: 22px;
-            height: 45px;
+            top: -3px;
+            right: 15px;
+            width: 18px;
+            height: 35px;
             background: linear-gradient(135deg, #c41e1e, #8B0000);
-            border-radius: 0 5px 5px 0;
-            transform: rotate(3deg);
-            box-shadow: 3px 5px 10px rgba(0,0,0,0.3);
-            z-index: 20;
-            border-left: 2px solid gold;
+            border-radius: 0 4px 4px 0;
+            transform: rotate(2deg);
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+            z-index: 15;
+            border-left: 1px solid gold;
+            opacity: 0.9;
         }
         
         .bookmark.green {
             background: linear-gradient(135deg, #2E7D32, #1B5E20);
-            left: 20px;
+            left: 15px;
             right: auto;
-            transform: rotate(-3deg);
+            transform: rotate(-2deg);
             border-left: none;
-            border-right: 2px solid gold;
-            border-radius: 5px 0 0 5px;
+            border-right: 1px solid gold;
+            border-radius: 4px 0 0 4px;
         }
         
         .bookmark::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 5px;
-            width: 12px;
-            height: 12px;
+            bottom: -8px;
+            left: 4px;
+            width: 10px;
+            height: 8px;
             background: inherit;
-            border-radius: 0 0 5px 5px;
-            transform: skewX(-10deg);
+            border-radius: 0 0 4px 4px;
+            transform: skewX(-8deg);
             filter: brightness(0.8);
         }
         
         .bookmark.green::after {
             left: auto;
-            right: 5px;
-            transform: skewX(10deg);
+            right: 4px;
+            transform: skewX(8deg);
         }
         
-        /* Style des liens dans le livre (VOS LIENS CLAQUABLES) */
+        /* Style des liens dans le livre - vos liens cliquables */
         .share-link {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
             color: inherit;
             padding: 6px 5px 8px;
@@ -595,16 +597,18 @@
             color: #C62828;
         }
         
+        /* Bouton Plus d'infos en bas - comme dans votre original */
         .action-buttons {
-            margin-top: 5px;
+            margin-top: auto;
             width: 100%;
+            padding-top: 5px;
         }
         
         .more-info-btn {
             background: transparent;
             border: 2px solid #DAA520;
             color: #8B4513;
-            padding: 5px 10px;
+            padding: 6px 10px;
             border-radius: 30px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -632,7 +636,7 @@
             transform: rotate(180deg);
         }
         
-        /* Style pour que les détails s'étirent sans scrolling */
+        /* Détails qui s'étirent sans scrolling */
         .option-details {
             max-height: 0;
             overflow: hidden;
@@ -644,9 +648,9 @@
         }
         
         .option-details.show {
-            max-height: 300px; /* Valeur grande pour laisser s'étirer */
+            max-height: 300px;
             margin: 8px 0 0;
-            overflow: visible; /* Pas de scrolling */
+            overflow: visible;
         }
         
         .details-content {
@@ -674,7 +678,7 @@
             left: 5px;
         }
         
-        /* VOS STYLES CONTACTS ET AUTRES (inchangés) */
+        /* Vos styles contacts inchangés */
         .contacts-section {
             text-align: center;
             margin: 15px 0 10px;
@@ -793,7 +797,7 @@
             background-color: #f5f0e6;
         }
         
-        /* RESPONSIVE pour le livre */
+        /* Responsive */
         @media (min-width: 1024px) {
             .book-leaf {
                 min-height: auto;
@@ -864,14 +868,14 @@
             }
             
             .bookmark, .bookmark.green {
-                top: -4px;
-                width: 18px;
-                height: 35px;
+                top: -2px;
+                width: 16px;
+                height: 30px;
             }
             
             .bookmark::after {
-                bottom: -8px;
-                height: 8px;
+                bottom: -6px;
+                height: 6px;
             }
             
             .share-link {
@@ -884,9 +888,8 @@
                 width: 2rem;
             }
             
-            /* Suppression du scrolling pour les détails */
             .option-details.show {
-                max-height: none; /* S'étend selon le contenu */
+                max-height: none;
                 overflow: visible;
             }
         }
@@ -991,7 +994,7 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- LIVRE RÉALISTE avec les deux options -->
+                            <!-- LIVRE RÉALISTE avec marque-pages repositionnés -->
                             <div class="book-realistic">
                                 <div class="book-cover">
                                     <div class="book-spine-real"></div>
