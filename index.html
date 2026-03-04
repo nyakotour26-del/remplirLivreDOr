@@ -678,7 +678,7 @@
             left: 5px;
         }
         
-        /* Vos styles contacts inchangés */
+        /* ===== NOUVEAU STYLE POUR LES CONTACTS ===== */
         .contacts-section {
             text-align: center;
             margin: 15px 0 10px;
@@ -708,46 +708,80 @@
         
         .contact-links {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         .contact-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            color: #8B4513;
+            gap: 8px;
             text-decoration: none;
             font-weight: 600;
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 40px;
             background-color: rgba(255, 253, 242, 0.9);
             transition: all 0.3s ease;
-            width: 100%;
-            max-width: 280px;
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
             font-size: 0.95rem;
+            min-width: 140px;
         }
         
-        .contact-link:hover {
-            background-color: #FFEC8B;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.15);
-            border-color: #8B4513;
+        /* Couleurs officielles */
+        .contact-link.facebook {
+            color: #1877f2; /* Bleu Facebook officiel */
         }
         
-        .contact-link i {
-            font-size: 1.2rem;
+        .contact-link.facebook i {
+            color: #1877f2;
+        }
+        
+        .contact-link.email {
+            color: #c71610; /* Rouge Gmail officiel */
+        }
+        
+        .contact-link.email i {
+            color: #c71610;
         }
         
         .contact-link.tour-link {
             background: linear-gradient(145deg, #fff9e6, #FFEC8B);
             border-color: #8B4513;
+            color: #8B4513;
             font-size: 1rem;
+        }
+        
+        .contact-link.tour-link i {
+            color: #8B4513;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+        }
+        
+        .contact-link.facebook:hover {
+            background-color: #e7f0ff;
+            border-color: #1877f2;
+        }
+        
+        .contact-link.email:hover {
+            background-color: #ffe6e5;
+            border-color: #c71610;
+        }
+        
+        .contact-link.tour-link:hover {
+            background: linear-gradient(145deg, #FFEC8B, #FFD700);
+        }
+        
+        .contact-link i {
+            font-size: 1.2rem;
         }
         
         .back-link {
@@ -771,6 +805,12 @@
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
         }
         
+        .back-link a:hover {
+            background-color: #FFEC8B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
+        }
+
         .language-photo {
             display: flex;
             flex-direction: column;
@@ -892,6 +932,17 @@
                 max-height: none;
                 overflow: visible;
             }
+            
+            /* Contacts en ligne sur mobile aussi */
+            .contact-links {
+                gap: 10px;
+            }
+            
+            .contact-link {
+                min-width: auto;
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
         }
         
         @media (max-width: 400px) {
@@ -909,6 +960,11 @@
             .share-link i {
                 font-size: 1.6rem;
                 width: 1.8rem;
+            }
+            
+            .contact-link {
+                padding: 6px 10px;
+                font-size: 0.8rem;
             }
         }
         
@@ -1061,13 +1117,15 @@
                     <div class="contact-links">
                         <!-- Programme en premier -->
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
-                            <i class="fas fa-calendar-alt"></i> <span>Programme de la tournée</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
+                            <i class="fas fa-calendar-alt"></i> <span>Programme</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
-                            <i class="fab fa-facebook"></i> <span>Page Facebook</span>
+                        <!-- Facebook avec couleur officielle -->
+                        <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link facebook">
+                            <i class="fab fa-facebook"></i> <span>Facebook</span>
                         </a>
-                        <a href="mailto:nyakotour26@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i> <span>Pour la prière</span>
+                        <!-- Email avec couleur officielle Gmail -->
+                        <a href="mailto:nyakotour26@gmail.com" class="contact-link email">
+                            <i class="fas fa-envelope"></i> <span>Email</span>
                         </a>
                     </div>
                 </div>
@@ -1166,13 +1224,15 @@
                     <div class="contact-links">
                         <!-- Tour Program first -->
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
-                            <i class="fas fa-calendar-alt"></i> <span>Tour Program</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
+                            <i class="fas fa-calendar-alt"></i> <span>Program</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
-                            <i class="fab fa-facebook"></i> <span>Facebook Page</span>
+                        <!-- Facebook with official color -->
+                        <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link facebook">
+                            <i class="fab fa-facebook"></i> <span>Facebook</span>
                         </a>
-                        <a href="mailto:nyakotour26@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i> <span>For prayer</span>
+                        <!-- Email with official Gmail color -->
+                        <a href="mailto:nyakotour26@gmail.com" class="contact-link email">
+                            <i class="fas fa-envelope"></i> <span>Email</span>
                         </a>
                     </div>
                 </div>
