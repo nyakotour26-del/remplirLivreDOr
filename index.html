@@ -75,8 +75,9 @@
             transform: rotate(-25deg);
         }
 
+        /* ===== BANDE DRAPEAUX : AJUSTEMENTS RESPONSIVE ===== */
         .flags-column {
-            width: 75px;
+            width: 80px; /* légèrement plus large */
             background: linear-gradient(to bottom, rgba(139, 69, 19, 0.9), rgba(210, 105, 30, 0.9));
             display: flex;
             flex-direction: column;
@@ -124,6 +125,32 @@
         
         .flags-column .flag:last-child {
             margin-bottom: 0;
+        }
+
+        /* Adaptation tablette/ordi : bande plus large pour équilibrer le livre */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .flags-column {
+                width: 100px; /* plus large sur tablette */
+                padding: 20px 12px;
+            }
+            .flags-column .flag {
+                width: 65px;
+                height: 45px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .flags-column {
+                width: 130px; /* encore plus large sur ordinateur */
+                padding: 25px 15px;
+            }
+            .flags-column .flag {
+                width: 85px;
+                height: 60px;
+                margin-bottom: 25px;
+                border-width: 3px;
+            }
         }
 
         .main-content {
@@ -352,7 +379,7 @@
             position: relative;
         }
         
-        /* ===== STYLE LIVRE RÉALISTE ===== */
+        /* ===== STYLE LIVRE RÉALISTE AMÉLIORÉ ===== */
         .book-realistic {
             position: relative;
             width: 100%;
@@ -583,7 +610,7 @@
             flex-direction: column;
         }
         
-        .share-link .text-with-emoji {
+        .text-with-emoji {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -591,11 +618,17 @@
         }
         
         .click-emoji {
-            font-size: 1.2rem;
+            font-size: 1.5rem; /* légèrement plus grand */
             color: #000000 !important; /* Noir forcé */
             filter: none;
             display: inline-block;
             margin-left: 3px;
+            animation: subtle-point 1.5s infinite ease-in-out;
+        }
+        
+        @keyframes subtle-point {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(3px); }
         }
         
         .share-link small {
@@ -833,16 +866,51 @@
             background-color: #f5f0e6;
         }
         
-        /* Responsive */
+        /* Responsive pour le livre (options plus visibles) */
         @media (min-width: 1024px) {
+            .share-link {
+                font-size: 1.3rem; /* plus grand sur ordi */
+            }
+            .share-link i {
+                font-size: 2.8rem;
+                width: 3rem;
+            }
+            .book-leaf {
+                padding: 15px 12px 10px;
+            }
+            .click-emoji {
+                font-size: 1.8rem;
+            }
+            .book-realistic {
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        /* Tablette : on évite la déformation et on rend les options plus visibles */
+        @media (min-width: 768px) and (max-width: 1023px) {
             .share-link {
                 font-size: 1.2rem;
             }
             .share-link i {
                 font-size: 2.5rem;
+                width: 2.8rem;
+            }
+            .book-leaf {
+                padding: 12px 10px 8px;
+            }
+            .click-emoji {
+                font-size: 1.6rem;
+            }
+            .book-realistic {
+                max-width: 750px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
         
+        /* Téléphone : les options s'empilent mais on garde la visibilité */
         @media (max-width: 599px) {
             .flags-column {
                 position: absolute;
@@ -880,16 +948,17 @@
             }
             
             .share-link {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                padding: 10px 5px; /* plus facile à cliquer */
             }
             
             .share-link i {
-                font-size: 1.8rem;
-                width: 2rem;
+                font-size: 2.2rem;
+                width: 2.5rem;
             }
             
             .click-emoji {
-                font-size: 1rem;
+                font-size: 1.4rem;
             }
             
             .option-details.show {
@@ -903,6 +972,17 @@
             .contact-link {
                 min-width: auto;
                 padding: 8px 15px;
+            }
+            
+            /* meilleure mise en évidence des options sur mobile */
+            .book-leaf {
+                background: rgba(255,253,242,0.98);
+                border: 1px solid #DAA520;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .share-link {
+                background: rgba(218,165,32,0.05);
+                border-radius: 12px;
             }
         }
     </style>
