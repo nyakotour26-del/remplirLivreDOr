@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Livre d'or - Ny ako Madagascar Europe Tour 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&family=Indie+Flower&display=swap" rel="stylesheet">
@@ -254,80 +254,71 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 12px;
+            padding: 8px 12px;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
         
-        .main-content-row {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        /* Style photo pleine largeur */
         .photo-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 5px; 
             width: 100%;
         }
         
         .simple-frame {
             width: 100%;
-            max-width: 500px;
-            margin-bottom: 10px;
+            max-width: 450px; 
+            margin-bottom: 5px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             border: 2px solid #DAA520;
             transition: transform 0.3s ease;
         }
         
         .simple-frame:hover {
             transform: scale(1.02);
-            box-shadow: 0 12px 28px rgba(139, 69, 19, 0.25);
+            box-shadow: 0 10px 22px rgba(139, 69, 19, 0.25);
         }
         
         .simple-img {
             width: 100%;
             height: auto;
-            max-height: 250px;
+            max-height: 200px; 
             object-fit: contain;
             display: block;
             background-color: #f5f0e6;
         }
         
-        /* Titre principal sans encadrement - enrichi avec emoji livre */
         .main-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem; 
             color: #DAA520;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 800;
             text-align: center;
-            margin: 15px 0 5px 0;
+            margin: 5px 0 8px 0; 
             letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+            line-height: 1.2;
         }
         
         .main-title i, .main-title .emoji {
-            margin: 0 10px;
+            margin: 0 8px;
             color: #8B4513;
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
         
-        /* Texte de témoignage sans encadrement */
         .testimony-text {
             font-family: 'Indie Flower', cursive;
-            font-size: 1.2rem;
+            font-size: 1.2rem; 
             color: #5a3921;
             text-align: center;
-            margin: 5px 0 20px 0;
-            padding: 0 10px;
-            line-height: 1.6;
+            margin: 0 0 15px 0; 
+            padding: 0 8px;
+            line-height: 1.5;
         }
         
         .testimony-text p {
@@ -336,7 +327,7 @@
         
         .testimony-text .small-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #6b4f2e;
             margin-top: 5px;
         }
@@ -344,7 +335,7 @@
         .content-section {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 10px; 
         }
         
         .form-section {
@@ -355,15 +346,15 @@
         .form-options {
             display: flex;
             flex-direction: column;
-            gap: 18px;
-            margin-bottom: 15px;
+            gap: 15px; 
+            margin-bottom: 10px;
         }
         
         .option-card {
             background: rgba(255, 253, 242, 0.95);
-            border-radius: 16px;
-            padding: 18px;
-            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+            border-radius: 16px; 
+            padding: 16px 18px; 
+            box-shadow: 0 8px 18px rgba(139, 69, 19, 0.15);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -371,6 +362,8 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
+            height: 100%;
+            min-height: 180px;
         }
 
         .option-card::before, .option-card::after {
@@ -429,81 +422,75 @@
         }
         
         .option-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: 0 12px 25px rgba(139, 69, 19, 0.25);
         }
         
-        .option-header {
+        /* Style pour le lien de partage - sans encadrement, emoji agrandi */
+        .share-link {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .option-badge-icon {
-            font-size: 1.5rem;
-            background: transparent;
-            color: #5a3921;
-        }
-        
-        .no-photo-option .option-badge-icon {
-            color: #2E7D32;
-        }
-        
-        .with-photo-option .option-badge-icon {
-            color: #C62828;
-        }
-        
-        /* Titres cliquables - mis en évidence */
-        .clickable-title {
-            display: block;
+            gap: 15px;
             text-decoration: none;
             color: inherit;
-            margin: 0 0 12px;
-            padding: 12px 15px;
-            border-radius: 10px;
-            background-color: rgba(255, 253, 242, 0.8);
-            border: 2px solid transparent;
+            margin: 5px 0 12px 5px;
+            padding: 8px 0;
             transition: all 0.3s ease;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: 100%;
         }
         
-        .no-photo-option .clickable-title {
-            border-left: 5px solid #2E7D32;
+        .no-photo-option .share-link {
             color: #2E7D32;
         }
         
-        .with-photo-option .clickable-title {
-            border-left: 5px solid #C62828;
+        .with-photo-option .share-link {
             color: #C62828;
         }
         
-        .clickable-title:hover {
-            background-color: #FFEC8B;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
-            border: 2px solid #DAA520;
+        .share-link:hover {
+            transform: translateX(8px);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        .clickable-title i {
-            margin-left: 8px;
-            font-size: 0.9rem;
+        .share-link i {
+            font-size: 2.2rem;
+            width: 2.5rem;
+            text-align: center;
             transition: transform 0.2s ease;
         }
         
-        .clickable-title:hover i {
-            transform: translateX(5px);
+        .share-link:hover i {
+            transform: scale(1.1);
+        }
+        
+        .share-link span {
+            line-height: 1.4;
+            flex: 1;
+        }
+        
+        .share-link small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            display: block;
+            color: #6b4f2e;
+            margin-top: 2px;
+        }
+        
+        .no-photo-option .share-link small {
+            color: #2E7D32;
+        }
+        
+        .with-photo-option .share-link small {
+            color: #C62828;
         }
         
         .action-buttons {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 5px 0 0;
+            margin-top: auto;
             width: 100%;
         }
         
@@ -512,17 +499,17 @@
             border: 2px solid #DAA520;
             color: #8B4513;
             padding: 8px 12px;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            gap: 6px;
             transition: all 0.3s ease;
             font-family: 'Montserrat', sans-serif;
             width: 100%;
-            justify-content: center;
         }
         
         .more-info-btn:hover {
@@ -550,22 +537,22 @@
         }
         
         .option-details.show {
-            max-height: 300px;
-            margin: 15px 0 0;
+            max-height: 200px; 
+            margin: 12px 0 0;
             overflow-y: auto;
         }
         
         .details-content {
-            padding: 12px;
+            padding: 10px 12px;
             border-left: 3px solid #DAA520;
             background-color: rgba(255, 253, 242, 0.9);
             border-radius: 8px;
         }
         
         .detail-item {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #5a3921;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.3;
             padding-left: 20px;
@@ -580,16 +567,15 @@
             left: 5px;
         }
         
-        /* Section contacts sans encadrement */
         .contacts-section {
             text-align: center;
-            margin: 25px 0 15px;
-            padding: 10px 0;
+            margin: 15px 0 10px;
+            padding: 0;
         }
         
         .contacts-section h3 {
             color: #8B4513;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 1.3rem;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
@@ -611,7 +597,7 @@
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
         }
         
@@ -623,7 +609,7 @@
             color: #8B4513;
             text-decoration: none;
             font-weight: 600;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 40px;
             background-color: rgba(255, 253, 242, 0.9);
             transition: all 0.3s ease;
@@ -632,12 +618,13 @@
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
+            font-size: 0.95rem;
         }
         
         .contact-link:hover {
             background-color: #FFEC8B;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.15);
             border-color: #8B4513;
         }
         
@@ -645,14 +632,10 @@
             font-size: 1.2rem;
         }
         
-        .contact-link .fa-star {
-            color: #DAA520;
-        }
-        
         .contact-link.tour-link {
             background: linear-gradient(145deg, #fff9e6, #FFEC8B);
             border-color: #8B4513;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .contact-link.tour-link:hover {
@@ -661,15 +644,15 @@
         
         .back-link {
             text-align: center;
-            margin-top: 12px;
-            margin-bottom: 8px;
+            margin-top: 8px;
+            margin-bottom: 5px;
         }
         
         .back-link a {
             color: #8B4513;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             padding: 8px 15px;
             border-radius: 20px;
             background-color: rgba(255, 253, 242, 0.95);
@@ -682,11 +665,10 @@
         
         .back-link a:hover {
             background-color: #FFEC8B;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
         }
 
-        /* Style pour la photo dans la page de sélection de langue */
         .language-photo {
             display: flex;
             flex-direction: column;
@@ -713,6 +695,7 @@
             background-color: #f5f0e6;
         }
         
+        /* tablette et desktop */
         @media (min-width: 600px) and (max-width: 1023px) {
             .flags-column {
                 width: 80px;
@@ -727,28 +710,28 @@
             
             .form-options {
                 flex-direction: row;
-                gap: 20px;
+                gap: 18px;
             }
             
             .option-card {
                 flex: 1;
-                min-height: 220px;
+                min-height: 190px;
+                padding: 18px;
             }
-            
+
             .simple-frame {
-                max-width: 450px;
+                max-width: 400px;
             }
-            
+
             .contact-links {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 12px;
             }
-            
-            .contact-link {
-                width: auto;
-                min-width: 200px;
+
+            .main-title {
+                font-size: 2.4rem;
             }
         }
         
@@ -764,45 +747,45 @@
                 margin-bottom: 20px;
             }
             
-            .main-content-row {
-                flex-direction: row;
-                align-items: flex-start;
-                gap: 25px;
+            .container {
+                max-width: 1200px;
+                padding: 10px 20px;
             }
-            
-            .title-section {
-                width: 30%;
-                max-width: 280px;
-                margin-bottom: 0;
-                min-height: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+
+            .photo-section {
+                margin-bottom: 5px;
             }
-            
-            .content-section {
-                flex: 1;
+            .simple-frame {
+                max-width: 400px;
             }
-            
+            .simple-img {
+                max-height: 170px;
+            }
+            .main-title {
+                font-size: 2.5rem;
+                margin: 5px 0 10px;
+            }
+            .testimony-text {
+                margin: 0 0 15px 0;
+            }
             .form-options {
                 flex-direction: row;
-                gap: 25px;
+                gap: 22px;
+                margin-bottom: 8px;
             }
-            
             .option-card {
                 flex: 1;
-                min-height: 220px;
+                min-height: 190px;
+                padding: 18px 20px;
             }
-            
             .contact-links {
                 flex-direction: row;
                 justify-content: center;
-                gap: 20px;
+                gap: 18px;
             }
-            
             .contact-link {
-                width: auto;
-                min-width: 200px;
+                max-width: 240px;
+                padding: 10px 15px;
             }
         }
         
@@ -814,15 +797,6 @@
             .flags-column .flag {
                 width: 65px;
                 height: 45px;
-            }
-            
-            .container {
-                max-width: 1200px;
-            }
-            
-            .title-section {
-                width: 25%;
-                max-width: 260px;
             }
         }
         
@@ -839,7 +813,7 @@
                 width: 100%;
                 flex-direction: row;
                 justify-content: center;
-                padding: 8px;
+                padding: 6px;
                 border-bottom: 2px solid #DAA520;
                 background: rgba(139, 69, 19, 0.9);
             }
@@ -849,127 +823,114 @@
             }
             
             .flags-column .flag {
-                width: 30px;
-                height: 22px;
-                margin: 0 4px;
+                width: 28px;
+                height: 20px;
+                margin: 0 3px;
             }
             
             .main-content {
-                padding-top: 60px;
+                padding-top: 50px;
             }
             
             .language-selector {
-                padding-top: 60px;
-                min-height: calc(100vh - 60px);
+                padding-top: 50px;
+                min-height: calc(100vh - 50px);
             }
             
             .flower-decoration {
                 display: none;
             }
             
-            .action-buttons {
-                width: 100%;
-            }
-            
-            .testimony-text {
-                font-size: 1rem;
-                padding: 0 8px;
-            }
-            
             .simple-frame {
-                max-width: 350px;
+                max-width: 320px;
             }
-            
-            .language-photo-frame {
-                max-width: 280px;
+            .simple-img {
+                max-height: 140px;
             }
-            
             .main-title {
                 font-size: 2rem;
+                margin: 5px 0 10px;
             }
-            
-            .main-title i, .main-title .emoji {
+            .main-title i {
                 font-size: 1.8rem;
+            }
+            .testimony-text {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            .testimony-text .small-text {
+                font-size: 0.8rem;
+            }
+            .option-card {
+                padding: 14px;
+                min-height: 170px;
+            }
+            .share-link {
+                font-size: 0.95rem;
+                gap: 10px;
+                margin-left: 0;
+            }
+            .share-link i {
+                font-size: 1.8rem;
+                width: 2rem;
+            }
+            .more-info-btn {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+            .contact-link {
+                max-width: 260px;
+                font-size: 0.85rem;
+                padding: 8px 12px;
+            }
+            .back-link a {
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
             
             @media (max-width: 400px) {
-                .flags-column {
-                    padding: 6px;
-                }
-                
                 .flags-column .flag {
-                    width: 25px;
+                    width: 24px;
                     height: 18px;
-                    margin: 0 3px;
+                    margin: 0 2px;
                 }
-                
                 .main-content {
-                    padding-top: 50px;
+                    padding-top: 45px;
                 }
-                
-                .language-selector {
-                    padding-top: 50px;
+                .simple-img {
+                    max-height: 120px;
                 }
-                
-                .testimony-text {
-                    font-size: 0.95rem;
-                }
-                
                 .main-title {
                     font-size: 1.8rem;
                 }
-            }
-        }
-        
-        @media (max-width: 350px) {
-            .flags-column {
-                padding: 5px;
-            }
-            
-            .flags-column .flag {
-                width: 22px;
-                height: 16px;
-                margin: 0 2px;
-            }
-            
-            .main-content {
-                padding-top: 45px;
-            }
-            
-            .language-selector {
-                padding-top: 45px;
-            }
-            
-            .language-photo-frame {
-                max-width: 240px;
+                .testimony-text {
+                    font-size: 0.95rem;
+                }
+                .option-card {
+                    padding: 12px;
+                }
+                .share-link {
+                    font-size: 0.9rem;
+                }
+                .share-link i {
+                    font-size: 1.6rem;
+                }
+                .details-content {
+                    padding: 8px;
+                }
+                .detail-item {
+                    font-size: 0.75rem;
+                }
             }
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .option-card {
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        .option-card:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .flags-column .flag:nth-child(odd) {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .flags-column .flag:nth-child(even) {
-            animation: float 4s ease-in-out infinite reverse;
-            animation-delay: 0.5s;
+            animation: fadeIn 0.4s ease-out;
         }
         
         @keyframes gentleAppear {
@@ -978,43 +939,7 @@
         }
         
         .language-box, .option-card {
-            animation: gentleAppear 0.6s ease-out;
-        }
-
-        @keyframes gentleSway {
-            0%, 100% { transform: rotate(-15deg) translateY(0); }
-            50% { transform: rotate(-15deg) translateY(-3px); }
-        }
-
-        @keyframes gentleSway2 {
-            0%, 100% { transform: rotate(20deg) translateY(0); }
-            50% { transform: rotate(20deg) translateY(-3px); }
-        }
-
-        @keyframes gentleSway3 {
-            0%, 100% { transform: rotate(10deg) translateY(0); }
-            50% { transform: rotate(10deg) translateY(-3px); }
-        }
-
-        @keyframes gentleSway4 {
-            0%, 100% { transform: rotate(-25deg) translateY(0); }
-            50% { transform: rotate(-25deg) translateY(-3px); }
-        }
-
-        .flower-1 {
-            animation: gentleSway 8s ease-in-out infinite;
-        }
-
-        .flower-2 {
-            animation: gentleSway2 9s ease-in-out infinite;
-        }
-
-        .flower-3 {
-            animation: gentleSway3 7s ease-in-out infinite;
-        }
-
-        .flower-4 {
-            animation: gentleSway4 10s ease-in-out infinite;
+            animation: gentleAppear 0.5s ease-out;
         }
     </style>
 </head>
@@ -1043,9 +968,9 @@
     </div>
 
     <div class="main-content">
+        <!-- Sélecteur de langue -->
         <section class="language-selector" id="languageSelector">
             <div class="language-box">
-                <!-- Photo ajoutée dans la page de sélection de langue -->
                 <div class="language-photo">
                     <div class="language-photo-frame">
                         <img class="language-photo-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
@@ -1069,21 +994,17 @@
             </div>
         </section>
 
-        <!-- Page en français -->
+        <!-- Page FRANÇAIS -->
         <section class="main-page" id="frenchPage" data-lang="fr">
             <div class="container">
-                <!-- Photo pleine largeur sans légende -->
                 <div class="photo-section">
                     <div class="simple-frame">
                         <img class="simple-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
                     </div>
                 </div>
                 
-                <!-- Titre enrichi avec emoji livre en or -->
                 <h1 class="main-title">
-                    <i class="fas fa-book-open"></i> 
-                    LIVRE D'OR 
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-book-open"></i> LIVRE D'OR <i class="fas fa-star"></i>
                 </h1>
                 
                 <div class="testimony-text">
@@ -1094,19 +1015,14 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- Option 1 - Sans photo -->
+                            <!-- Option SANS PHOTO (FR) -->
                             <div class="option-card no-photo-option">
                                 <div class="corner-top-right"></div>
                                 <div class="corner-bottom-left"></div>
-                                <div class="option-header">
-                                    <span class="option-badge-icon">
-                                        <i class="fas fa-comment-alt fa-2x"></i>
-                                    </span>
-                                </div>
                                 
-                                <!-- Titre cliquable -->
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="clickable-title">
-                                    Partage SANS PHOTO <br><small>(sans connection google)</small> <i class="fas fa-arrow-right"></i>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="share-link">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <span>Partage SANS PHOTO <small>sans connexion google</small></span>
                                 </a>
                                 
                                 <div class="action-buttons">
@@ -1125,19 +1041,14 @@
                                 </div>
                             </div>
                             
-                            <!-- Option 2 - Avec photo -->
+                            <!-- Option AVEC PHOTO (FR) -->
                             <div class="option-card with-photo-option">
                                 <div class="corner-top-right"></div>
                                 <div class="corner-bottom-left"></div>
-                                <div class="option-header">
-                                    <span class="option-badge-icon">
-                                        <i class="fas fa-camera fa-2x"></i>
-                                    </span>
-                                </div>
                                 
-                                <!-- Titre cliquable -->
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="clickable-title">
-                                    Partage AVEC PHOTO <br><small>(Connection google requise)</small> <i class="fas fa-arrow-right"></i>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="share-link">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Partage AVEC PHOTO <small>Connection google requise</small></span>
                                 </a>
                                 
                                 <div class="action-buttons">
@@ -1159,22 +1070,17 @@
                     </section>
                 </div>
                 
-                <!-- Section contacts sans encadrement avec nouveau bouton tournée -->
                 <div class="contacts-section">
                     <h3>Restons en contact</h3>
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
-                            <i class="fab fa-facebook"></i>
-                            <span>Page Facebook</span>
+                            <i class="fab fa-facebook"></i> <span>Page Facebook</span>
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>Pour la prière</span>
+                            <i class="fas fa-envelope"></i> <span>Pour la prière</span>
                         </a>
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Programme de la tournée</span>
-                            <i class="fas fa-star" style="font-size: 0.8rem;"></i>
+                            <i class="fas fa-calendar-alt"></i> <span>Programme de la tournée</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
                     </div>
                 </div>
@@ -1185,21 +1091,17 @@
             </div>
         </section>
 
-        <!-- Page en anglais -->
+        <!-- Page ANGLAISE -->
         <section class="main-page" id="englishPage" data-lang="en">
             <div class="container">
-                <!-- Photo pleine largeur sans légende -->
                 <div class="photo-section">
                     <div class="simple-frame">
                         <img class="simple-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
                     </div>
                 </div>
                 
-                <!-- Titre enrichi avec emoji livre en or -->
                 <h1 class="main-title">
-                    <i class="fas fa-book-open"></i> 
-                    GUESTBOOK 
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-book-open"></i> GUESTBOOK <i class="fas fa-star"></i>
                 </h1>
                 
                 <div class="testimony-text">
@@ -1210,19 +1112,14 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- Option 1 - Without photo -->
+                            <!-- Option WITHOUT PHOTO (EN) -->
                             <div class="option-card no-photo-option">
                                 <div class="corner-top-right"></div>
                                 <div class="corner-bottom-left"></div>
-                                <div class="option-header">
-                                    <span class="option-badge-icon">
-                                        <i class="fas fa-comment-alt fa-2x"></i>
-                                    </span>
-                                </div>
                                 
-                                <!-- Clickable title -->
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="clickable-title">
-                                    Share WITHOUT PHOTO <br><small>(no google connection)</small> <i class="fas fa-arrow-right"></i>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="share-link">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <span>Share WITHOUT PHOTO <small>no google connection</small></span>
                                 </a>
                                 
                                 <div class="action-buttons">
@@ -1241,19 +1138,14 @@
                                 </div>
                             </div>
                             
-                            <!-- Option 2 - With photo -->
+                            <!-- Option WITH PHOTO (EN) -->
                             <div class="option-card with-photo-option">
                                 <div class="corner-top-right"></div>
                                 <div class="corner-bottom-left"></div>
-                                <div class="option-header">
-                                    <span class="option-badge-icon">
-                                        <i class="fas fa-camera fa-2x"></i>
-                                    </span>
-                                </div>
                                 
-                                <!-- Clickable title -->
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="clickable-title">
-                                    Share WITH PHOTO <br><small>(Google connection required)</small> <i class="fas fa-arrow-right"></i>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="share-link">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Share WITH PHOTO <small>Google connection required</small></span>
                                 </a>
                                 
                                 <div class="action-buttons">
@@ -1275,22 +1167,17 @@
                     </section>
                 </div>
                 
-                <!-- Section contacts sans encadrement avec nouveau bouton tournée -->
                 <div class="contacts-section">
                     <h3>Stay in touch</h3>
                     <div class="contact-links">
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link">
-                            <i class="fab fa-facebook"></i>
-                            <span>Facebook Page</span>
+                            <i class="fab fa-facebook"></i> <span>Facebook Page</span>
                         </a>
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>For prayer</span>
+                            <i class="fas fa-envelope"></i> <span>For prayer</span>
                         </a>
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Tour Program</span>
-                            <i class="fas fa-star" style="font-size: 0.8rem;"></i>
+                            <i class="fas fa-calendar-alt"></i> <span>Tour Program</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
                     </div>
                 </div>
@@ -1313,12 +1200,8 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('guestbookLang');
-            
-            if (savedLang === 'fr') {
-                showFrenchPage();
-            } else if (savedLang === 'en') {
-                showEnglishPage();
-            }
+            if (savedLang === 'fr') showFrenchPage();
+            else if (savedLang === 'en') showEnglishPage();
         });
 
         frenchBtn.addEventListener('click', function(e) {
@@ -1369,7 +1252,6 @@
         function toggleDetails(button) {
             const details = button.closest('.option-card').querySelector('.option-details');
             const icon = button.querySelector('i');
-            
             if (details.classList.contains('show')) {
                 details.classList.remove('show');
                 icon.classList.remove('fa-chevron-up');
