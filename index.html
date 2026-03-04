@@ -346,87 +346,103 @@
         .form-options {
             display: flex;
             flex-direction: column;
-            gap: 12px; 
-            margin-bottom: 8px;
+            gap: 15px; 
+            margin-bottom: 10px;
+            position: relative;
         }
         
-        .option-card {
-            background: rgba(255, 253, 242, 0.95);
-            border-radius: 14px; 
-            padding: 12px 15px; 
-            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.12);
-            transition: all 0.3s ease;
+        /* Style livre ouvert pour les deux options */
+        .book-container {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
             position: relative;
-            overflow: hidden;
-            border: 2px solid;
-            z-index: 1;
+            background: transparent;
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .book-page {
+            flex: 1;
+            position: relative;
+            background: #fffef7;
+            padding: 16px 18px;
+            min-height: 150px;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            min-height: 130px; /* Hauteur encore réduite */
+            border: 2px solid #DAA520;
+            box-shadow: inset 0 0 15px rgba(218, 165, 32, 0.1);
         }
-
-        .option-card::before, .option-card::after {
+        
+        .book-page.left-page {
+            border-right: none;
+            border-radius: 12px 0 0 12px;
+            background: linear-gradient(to right, #fffef7, #fff9e6);
+        }
+        
+        .book-page.right-page {
+            border-left: none;
+            border-radius: 0 12px 12px 0;
+            background: linear-gradient(to left, #fffef7, #fff9e6);
+        }
+        
+        /* Effet de reliure centrale */
+        .book-spine {
+            width: 12px;
+            background: linear-gradient(to right, #8B4513, #DAA520, #8B4513);
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            margin: 0 -2px;
+        }
+        
+        .book-spine::before {
             content: '';
             position: absolute;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #DAA520;
-            z-index: 2;
+            top: 10%;
+            left: 25%;
+            width: 50%;
+            height: 80%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 5px,
+                rgba(255, 215, 0, 0.2) 5px,
+                rgba(255, 215, 0, 0.2) 10px
+            );
+            pointer-events: none;
         }
-
-        .option-card::before {
-            top: 8px;
-            left: 8px;
-            border-right: none;
-            border-bottom: none;
-        }
-
-        .option-card::after {
-            bottom: 8px;
-            right: 8px;
-            border-left: none;
-            border-top: none;
-        }
-
-        .option-card .corner-top-right {
+        
+        /* Marque-page décoratif */
+        .bookmark-left {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #DAA520;
-            border-left: none;
-            border-bottom: none;
-            z-index: 2;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 30px;
+            background: #C62828;
+            border-radius: 0 5px 5px 0;
+            transform: rotate(5deg);
+            z-index: 10;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
-
-        .option-card .corner-bottom-left {
+        
+        .bookmark-right {
             position: absolute;
-            bottom: 8px;
-            left: 8px;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #DAA520;
-            border-right: none;
-            border-top: none;
-            z-index: 2;
+            top: -5px;
+            left: -5px;
+            width: 20px;
+            height: 30px;
+            background: #2E7D32;
+            border-radius: 5px 0 0 5px;
+            transform: rotate(-5deg);
+            z-index: 10;
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
         }
         
-        .option-card.no-photo-option {
-            border-color: #8B4513;
-        }
-        
-        .option-card.with-photo-option {
-            border-color: #DAA520;
-        }
-        
-        .option-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
-        }
-        
-        /* Style pour le lien de partage - emoji à côté (pas en haut) */
+        /* Style pour le lien de partage dans les pages */
         .share-link {
             display: flex;
             align-items: center;
@@ -437,16 +453,16 @@
             padding: 5px 0;
             transition: all 0.3s ease;
             font-weight: 600;
-            font-size: 1.2rem; /* Police plus grande */
+            font-size: 1.2rem;
             font-family: 'Montserrat', sans-serif;
             width: 100%;
         }
         
-        .no-photo-option .share-link {
+        .left-page .share-link {
             color: #2E7D32;
         }
         
-        .with-photo-option .share-link {
+        .right-page .share-link {
             color: #C62828;
         }
         
@@ -456,7 +472,7 @@
         }
         
         .share-link i {
-            font-size: 2.5rem; /* Emoji très grand */
+            font-size: 2.5rem;
             width: 2.8rem;
             text-align: center;
             transition: transform 0.2s ease;
@@ -479,11 +495,11 @@
             margin-top: 2px;
         }
         
-        .no-photo-option .share-link small {
+        .left-page .share-link small {
             color: #2E7D32;
         }
         
-        .with-photo-option .share-link small {
+        .right-page .share-link small {
             color: #C62828;
         }
         
@@ -569,14 +585,14 @@
         
         .contacts-section {
             text-align: center;
-            margin: 12px 0 8px;
+            margin: 15px 0 10px;
             padding: 0;
         }
         
         .contacts-section h3 {
             color: #8B4513;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
             position: relative;
@@ -586,10 +602,10 @@
         .contacts-section h3:after {
             content: '';
             position: absolute;
-            bottom: -3px;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
+            width: 50px;
             height: 2px;
             background: linear-gradient(to right, #FFD700, #8B4513);
         }
@@ -597,7 +613,7 @@
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
         }
         
@@ -605,37 +621,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             color: #8B4513;
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
+            padding: 10px 18px;
             border-radius: 40px;
             background-color: rgba(255, 253, 242, 0.9);
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 260px;
+            max-width: 280px;
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
-            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
+            font-size: 0.95rem;
         }
         
         .contact-link:hover {
             background-color: #FFEC8B;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.15);
             border-color: #8B4513;
         }
         
         .contact-link i {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
         .contact-link.tour-link {
             background: linear-gradient(145deg, #fff9e6, #FFEC8B);
             border-color: #8B4513;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         
         .contact-link.tour-link:hover {
@@ -644,7 +660,7 @@
         
         .back-link {
             text-align: center;
-            margin-top: 5px;
+            margin-top: 8px;
             margin-bottom: 5px;
         }
         
@@ -652,21 +668,21 @@
             color: #8B4513;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.8rem;
-            padding: 6px 12px;
+            font-size: 0.85rem;
+            padding: 8px 15px;
             border-radius: 20px;
             background-color: rgba(255, 253, 242, 0.95);
             transition: all 0.3s ease;
             display: inline-block;
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
         }
         
         .back-link a:hover {
             background-color: #FFEC8B;
             transform: translateY(-2px);
-            box-shadow: 0 6px 10px rgba(139, 69, 19, 0.15);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
         }
 
         .language-photo {
@@ -708,14 +724,8 @@
                 margin-bottom: 20px;
             }
             
-            .form-options {
-                flex-direction: row;
-                gap: 15px;
-            }
-            
-            .option-card {
-                flex: 1;
-                min-height: 140px; /* Hauteur réduite */
+            .book-page {
+                min-height: 160px;
                 padding: 15px;
             }
 
@@ -727,7 +737,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 10px;
+                gap: 12px;
             }
 
             .main-title {
@@ -768,31 +778,29 @@
             .testimony-text {
                 margin: 0 0 15px 0;
             }
-            .form-options {
-                flex-direction: row;
-                gap: 20px;
-                margin-bottom: 5px;
+            
+            .book-page {
+                min-height: 160px;
+                padding: 18px 20px;
             }
-            .option-card {
-                flex: 1;
-                min-height: 140px; /* Hauteur réduite */
-                padding: 15px 18px;
-            }
+            
             .share-link {
                 font-size: 1.3rem;
             }
+            
             .share-link i {
                 font-size: 2.8rem;
                 width: 3rem;
             }
+            
             .contact-links {
                 flex-direction: row;
                 justify-content: center;
-                gap: 15px;
+                gap: 18px;
             }
             .contact-link {
                 max-width: 240px;
-                padding: 8px 15px;
+                padding: 10px 15px;
             }
         }
         
@@ -868,10 +876,42 @@
             .testimony-text .small-text {
                 font-size: 0.8rem;
             }
-            .option-card {
-                padding: 12px;
-                min-height: 120px; /* Hauteur réduite */
+            
+            /* Sur mobile, on repasse en colonne mais avec effet livre */
+            .form-options {
+                flex-direction: column;
+                gap: 20px;
             }
+            
+            .book-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .book-page {
+                border-radius: 12px;
+                min-height: 140px;
+                padding: 12px;
+            }
+            
+            .book-page.left-page {
+                border-right: 2px solid #DAA520;
+                border-radius: 12px;
+            }
+            
+            .book-page.right-page {
+                border-left: 2px solid #DAA520;
+                border-radius: 12px;
+            }
+            
+            .book-spine {
+                display: none;
+            }
+            
+            .bookmark-left, .bookmark-right {
+                display: none;
+            }
+            
             .share-link {
                 font-size: 1.1rem;
                 gap: 8px;
@@ -887,12 +927,12 @@
             }
             .contact-link {
                 max-width: 260px;
-                font-size: 0.8rem;
-                padding: 6px 12px;
+                font-size: 0.85rem;
+                padding: 8px 12px;
             }
             .back-link a {
-                font-size: 0.75rem;
-                padding: 5px 10px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
             
             @media (max-width: 400px) {
@@ -913,9 +953,9 @@
                 .testimony-text {
                     font-size: 0.95rem;
                 }
-                .option-card {
+                .book-page {
+                    min-height: 130px;
                     padding: 10px;
-                    min-height: 110px;
                 }
                 .share-link {
                     font-size: 1rem;
@@ -938,8 +978,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .option-card {
-            animation: fadeIn 0.4s ease-out;
+        .book-container {
+            animation: fadeIn 0.5s ease-out;
         }
         
         @keyframes gentleAppear {
@@ -947,7 +987,7 @@
             to { opacity: 1; transform: scale(1); }
         }
         
-        .language-box, .option-card {
+        .language-box, .book-container {
             animation: gentleAppear 0.5s ease-out;
         }
     </style>
@@ -1024,54 +1064,56 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- Option SANS PHOTO (FR) -->
-                            <div class="option-card no-photo-option">
-                                <div class="corner-top-right"></div>
-                                <div class="corner-bottom-left"></div>
-                                
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="share-link">
-                                    <i class="fas fa-comment-alt"></i>
-                                    <span>Partage SANS PHOTO <small>sans connexion google</small></span>
-                                </a>
-                                
-                                <div class="action-buttons">
-                                    <button class="more-info-btn" onclick="toggleDetails(this)">
-                                        <i class="fas fa-chevron-down"></i> Plus d'infos
-                                    </button>
-                                </div>
-                                
-                                <div class="option-details">
-                                    <div class="details-content">
-                                        <div class="detail-item">Sans connexion - Rapide et simple</div>
-                                        <div class="detail-item">Sans photo - Partagez juste votre message</div>
-                                        <div class="detail-item">Option : rester anonyme</div>
-                                        <div class="detail-item">Option : partager vos coordonnées</div>
+                            <!-- Livre ouvert pour les deux options -->
+                            <div class="book-container">
+                                <!-- Page de gauche : SANS PHOTO -->
+                                <div class="book-page left-page">
+                                    <div class="bookmark-left"></div>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="share-link">
+                                        <i class="fas fa-comment-alt"></i>
+                                        <span>Partage SANS PHOTO <small>sans connexion google</small></span>
+                                    </a>
+                                    
+                                    <div class="action-buttons">
+                                        <button class="more-info-btn" onclick="toggleDetails(this)">
+                                            <i class="fas fa-chevron-down"></i> Plus d'infos
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="option-details">
+                                        <div class="details-content">
+                                            <div class="detail-item">Sans connexion - Rapide et simple</div>
+                                            <div class="detail-item">Sans photo - Partagez juste votre message</div>
+                                            <div class="detail-item">Option : rester anonyme</div>
+                                            <div class="detail-item">Option : partager vos coordonnées</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Option AVEC PHOTO (FR) -->
-                            <div class="option-card with-photo-option">
-                                <div class="corner-top-right"></div>
-                                <div class="corner-bottom-left"></div>
                                 
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="share-link">
-                                    <i class="fas fa-camera"></i>
-                                    <span>Partage AVEC PHOTO <small>Connection google requise</small></span>
-                                </a>
+                                <!-- Reliure centrale -->
+                                <div class="book-spine"></div>
                                 
-                                <div class="action-buttons">
-                                    <button class="more-info-btn" onclick="toggleDetails(this)">
-                                        <i class="fas fa-chevron-down"></i> Plus d'infos
-                                    </button>
-                                </div>
-                                
-                                <div class="option-details">
-                                    <div class="details-content">
-                                        <div class="detail-item">Avec photo - Ajoutez une image mémorable</div>
-                                        <div class="detail-item">Connexion Google requise pour l'upload</div>
-                                        <div class="detail-item">Option : rester anonyme</div>
-                                        <div class="detail-item">Option : partager vos coordonnées</div>
+                                <!-- Page de droite : AVEC PHOTO -->
+                                <div class="book-page right-page">
+                                    <div class="bookmark-right"></div>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="share-link">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Partage AVEC PHOTO <small>Connection google requise</small></span>
+                                    </a>
+                                    
+                                    <div class="action-buttons">
+                                        <button class="more-info-btn" onclick="toggleDetails(this)">
+                                            <i class="fas fa-chevron-down"></i> Plus d'infos
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="option-details">
+                                        <div class="details-content">
+                                            <div class="detail-item">Avec photo - Ajoutez une image mémorable</div>
+                                            <div class="detail-item">Connexion Google requise pour l'upload</div>
+                                            <div class="detail-item">Option : rester anonyme</div>
+                                            <div class="detail-item">Option : partager vos coordonnées</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1122,54 +1164,56 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- Option WITHOUT PHOTO (EN) -->
-                            <div class="option-card no-photo-option">
-                                <div class="corner-top-right"></div>
-                                <div class="corner-bottom-left"></div>
-                                
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="share-link">
-                                    <i class="fas fa-comment-alt"></i>
-                                    <span>Share WITHOUT PHOTO <small>no google connection</small></span>
-                                </a>
-                                
-                                <div class="action-buttons">
-                                    <button class="more-info-btn" onclick="toggleDetails(this)">
-                                        <i class="fas fa-chevron-down"></i> More info
-                                    </button>
-                                </div>
-                                
-                                <div class="option-details">
-                                    <div class="details-content">
-                                        <div class="detail-item">No connection - Quick and simple</div>
-                                        <div class="detail-item">No photo - Just share your message</div>
-                                        <div class="detail-item">Option: remain anonymous</div>
-                                        <div class="detail-item">Option: share your contact details</div>
+                            <!-- Open book for both options -->
+                            <div class="book-container">
+                                <!-- Left page : WITHOUT PHOTO -->
+                                <div class="book-page left-page">
+                                    <div class="bookmark-left"></div>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="share-link">
+                                        <i class="fas fa-comment-alt"></i>
+                                        <span>Share WITHOUT PHOTO <small>no google connection</small></span>
+                                    </a>
+                                    
+                                    <div class="action-buttons">
+                                        <button class="more-info-btn" onclick="toggleDetails(this)">
+                                            <i class="fas fa-chevron-down"></i> More info
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="option-details">
+                                        <div class="details-content">
+                                            <div class="detail-item">No connection - Quick and simple</div>
+                                            <div class="detail-item">No photo - Just share your message</div>
+                                            <div class="detail-item">Option: remain anonymous</div>
+                                            <div class="detail-item">Option: share your contact details</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Option WITH PHOTO (EN) -->
-                            <div class="option-card with-photo-option">
-                                <div class="corner-top-right"></div>
-                                <div class="corner-bottom-left"></div>
                                 
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="share-link">
-                                    <i class="fas fa-camera"></i>
-                                    <span>Share WITH PHOTO <small>Google connection required</small></span>
-                                </a>
+                                <!-- Book spine -->
+                                <div class="book-spine"></div>
                                 
-                                <div class="action-buttons">
-                                    <button class="more-info-btn" onclick="toggleDetails(this)">
-                                        <i class="fas fa-chevron-down"></i> More info
-                                    </button>
-                                </div>
-                                
-                                <div class="option-details">
-                                    <div class="details-content">
-                                        <div class="detail-item">With photo - Add a memorable image</div>
-                                        <div class="detail-item">Google connection required for upload</div>
-                                        <div class="detail-item">Option: remain anonymous</div>
-                                        <div class="detail-item">Option: share your contact details</div>
+                                <!-- Right page : WITH PHOTO -->
+                                <div class="book-page right-page">
+                                    <div class="bookmark-right"></div>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="share-link">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Share WITH PHOTO <small>Google connection required</small></span>
+                                    </a>
+                                    
+                                    <div class="action-buttons">
+                                        <button class="more-info-btn" onclick="toggleDetails(this)">
+                                            <i class="fas fa-chevron-down"></i> More info
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="option-details">
+                                        <div class="details-content">
+                                            <div class="detail-item">With photo - Add a memorable image</div>
+                                            <div class="detail-item">Google connection required for upload</div>
+                                            <div class="detail-item">Option: remain anonymous</div>
+                                            <div class="detail-item">Option: share your contact details</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1261,7 +1305,7 @@
         }
 
         function toggleDetails(button) {
-            const details = button.closest('.option-card').querySelector('.option-details');
+            const details = button.closest('.book-page').querySelector('.option-details');
             const icon = button.querySelector('i');
             if (details.classList.contains('show')) {
                 details.classList.remove('show');
