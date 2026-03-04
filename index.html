@@ -301,15 +301,22 @@
             background-color: #f5f0e6;
         }
         
-        /* Titre principal sans encadrement */
+        /* Titre principal sans encadrement - enrichi avec emoji livre */
         .main-title {
-            font-size: 2.2rem;
-            color: #8B4513;
+            font-size: 2.5rem;
+            color: #DAA520;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
+            font-weight: 800;
             text-align: center;
             margin: 15px 0 5px 0;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+        }
+        
+        .main-title i, .main-title .emoji {
+            margin: 0 10px;
+            color: #8B4513;
+            font-size: 2.2rem;
         }
         
         /* Texte de témoignage sans encadrement */
@@ -573,40 +580,38 @@
             left: 5px;
         }
         
+        /* Section contacts sans encadrement */
         .contacts-section {
             text-align: center;
-            margin: 15px 0;
-            padding: 15px;
-            background-color: rgba(255, 253, 242, 0.95);
-            border-radius: 16px;
-            border: 2px solid #DAA520;
-            box-shadow: 0 6px 18px rgba(139, 69, 19, 0.12);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contacts-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #FFD700, #8B4513, #DAA520);
+            margin: 25px 0 15px;
+            padding: 10px 0;
         }
         
         .contacts-section h3 {
             color: #8B4513;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-size: 1.3rem;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contacts-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #FFD700, #8B4513);
         }
         
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
         }
         
@@ -618,12 +623,12 @@
             color: #8B4513;
             text-decoration: none;
             font-weight: 600;
-            padding: 10px 18px;
-            border-radius: 25px;
-            background-color: rgba(255, 253, 242, 0.95);
+            padding: 12px 20px;
+            border-radius: 40px;
+            background-color: rgba(255, 253, 242, 0.9);
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 250px;
+            max-width: 280px;
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
@@ -633,10 +638,25 @@
             background-color: #FFEC8B;
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+            border-color: #8B4513;
         }
         
         .contact-link i {
+            font-size: 1.2rem;
+        }
+        
+        .contact-link .fa-star {
+            color: #DAA520;
+        }
+        
+        .contact-link.tour-link {
+            background: linear-gradient(145deg, #fff9e6, #FFEC8B);
+            border-color: #8B4513;
             font-size: 1.1rem;
+        }
+        
+        .contact-link.tour-link:hover {
+            background: linear-gradient(145deg, #FFEC8B, #FFD700);
         }
         
         .back-link {
@@ -721,13 +741,14 @@
             
             .contact-links {
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
             
             .contact-link {
                 width: auto;
-                min-width: 180px;
+                min-width: 200px;
             }
         }
         
@@ -781,7 +802,7 @@
             
             .contact-link {
                 width: auto;
-                min-width: 170px;
+                min-width: 200px;
             }
         }
         
@@ -863,6 +884,14 @@
                 max-width: 280px;
             }
             
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .main-title i, .main-title .emoji {
+                font-size: 1.8rem;
+            }
+            
             @media (max-width: 400px) {
                 .flags-column {
                     padding: 6px;
@@ -884,6 +913,10 @@
                 
                 .testimony-text {
                     font-size: 0.95rem;
+                }
+                
+                .main-title {
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -944,7 +977,7 @@
             to { opacity: 1; transform: scale(1); }
         }
         
-        .language-box, .option-card, .contacts-section {
+        .language-box, .option-card {
             animation: gentleAppear 0.6s ease-out;
         }
 
@@ -1046,8 +1079,13 @@
                     </div>
                 </div>
                 
-                <!-- Titre et texte sans encadrement au-dessus des options -->
-                <h1 class="main-title">LIVRE D'OR</h1>
+                <!-- Titre enrichi avec emoji livre en or -->
+                <h1 class="main-title">
+                    <i class="fas fa-book-open"></i> 
+                    LIVRE D'OR 
+                    <i class="fas fa-star"></i>
+                </h1>
+                
                 <div class="testimony-text">
                     <p>🙏 Partagez votre témoignage avec nous ✨</p>
                     <p class="small-text">Votre expérience, vos encouragements et vos prières sont précieux pour notre ministère. Chaque témoignage nous fortifie dans notre mission.</p>
@@ -1121,6 +1159,7 @@
                     </section>
                 </div>
                 
+                <!-- Section contacts sans encadrement avec nouveau bouton tournée -->
                 <div class="contacts-section">
                     <h3>Restons en contact</h3>
                     <div class="contact-links">
@@ -1131,6 +1170,11 @@
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span>Pour la prière</span>
+                        </a>
+                        <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Programme de la tournée</span>
+                            <i class="fas fa-star" style="font-size: 0.8rem;"></i>
                         </a>
                     </div>
                 </div>
@@ -1151,8 +1195,13 @@
                     </div>
                 </div>
                 
-                <!-- Titre et texte sans encadrement au-dessus des options -->
-                <h1 class="main-title">GUESTBOOK</h1>
+                <!-- Titre enrichi avec emoji livre en or -->
+                <h1 class="main-title">
+                    <i class="fas fa-book-open"></i> 
+                    GUESTBOOK 
+                    <i class="fas fa-star"></i>
+                </h1>
+                
                 <div class="testimony-text">
                     <p>🙏 Share your testimony with us ✨</p>
                     <p class="small-text">Your experience, encouragements and prayers are valuable to our ministry. Each testimony strengthens us in our mission.</p>
@@ -1226,6 +1275,7 @@
                     </section>
                 </div>
                 
+                <!-- Section contacts sans encadrement avec nouveau bouton tournée -->
                 <div class="contacts-section">
                     <h3>Stay in touch</h3>
                     <div class="contact-links">
@@ -1236,6 +1286,11 @@
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span>For prayer</span>
+                        </a>
+                        <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Tour Program</span>
+                            <i class="fas fa-star" style="font-size: 0.8rem;"></i>
                         </a>
                     </div>
                 </div>
