@@ -301,54 +301,37 @@
             background-color: #f5f0e6;
         }
         
-        .title-section {
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 253, 242, 0.95);
-            border-radius: 16px;
-            border: 2px solid #DAA520;
-            box-shadow: 0 6px 18px rgba(139, 69, 19, 0.12);
-            margin-bottom: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .title-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #FFD700, #8B4513, #DAA520);
-        }
-        
+        /* Titre principal sans encadrement */
         .main-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #8B4513;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            display: inline-block;
-            border: 2px solid #DAA520;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            box-shadow: 0 3px 8px rgba(139, 69, 19, 0.1);
+            text-align: center;
+            margin: 15px 0 5px 0;
+            letter-spacing: 0.5px;
         }
         
+        /* Texte de témoignage sans encadrement */
         .testimony-text {
             font-family: 'Indie Flower', cursive;
             font-size: 1.2rem;
             color: #5a3921;
-            margin: 10px 0;
-            padding: 15px;
-            background-color: rgba(255, 253, 242, 0.8);
-            border-radius: 12px;
-            border-left: 4px solid #DAA520;
+            text-align: center;
+            margin: 5px 0 20px 0;
+            padding: 0 10px;
             line-height: 1.6;
+        }
+        
+        .testimony-text p {
+            margin-bottom: 8px;
+        }
+        
+        .testimony-text .small-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #6b4f2e;
+            margin-top: 5px;
         }
         
         .content-section {
@@ -770,7 +753,7 @@
                 width: 30%;
                 max-width: 280px;
                 margin-bottom: 0;
-                min-height: 450px;
+                min-height: auto;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -869,7 +852,7 @@
             
             .testimony-text {
                 font-size: 1rem;
-                padding: 12px;
+                padding: 0 8px;
             }
             
             .simple-frame {
@@ -961,7 +944,7 @@
             to { opacity: 1; transform: scale(1); }
         }
         
-        .language-box, .title-section, .option-card, .contacts-section {
+        .language-box, .option-card, .contacts-section {
             animation: gentleAppear 0.6s ease-out;
         }
 
@@ -1063,81 +1046,79 @@
                     </div>
                 </div>
                 
-                <div class="main-content-row">
-                    <div class="title-section">
-                        <h1 class="main-title">LIVRE D'OR</h1>
-                        <div class="testimony-text">
-                            🙏 Partagez votre témoignage avec nous ✨
-                        </div>
-                    </div>
-                    
-                    <div class="content-section">
-                        <section class="form-section">
-                            <div class="form-options">
-                                <!-- Option 1 - Sans photo -->
-                                <div class="option-card no-photo-option">
-                                    <div class="corner-top-right"></div>
-                                    <div class="corner-bottom-left"></div>
-                                    <div class="option-header">
-                                        <span class="option-badge-icon">
-                                            <i class="fas fa-comment-alt fa-2x"></i>
-                                        </span>
-                                    </div>
-                                    
-                                    <!-- Titre cliquable avec le texte demandé -->
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Partage SANS PHOTO <br><small>(sans connection google)</small> <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                    
-                                    <div class="action-buttons">
-                                        <button class="more-info-btn" onclick="toggleDetails(this)">
-                                            <i class="fas fa-chevron-down"></i> Plus d'infos
-                                        </button>
-                                    </div>
-                                    
-                                    <div class="option-details">
-                                        <div class="details-content">
-                                            <div class="detail-item">Sans connexion - Rapide et simple</div>
-                                            <div class="detail-item">Sans photo - Partagez juste votre message</div>
-                                            <div class="detail-item">Option : rester anonyme</div>
-                                            <div class="detail-item">Option : partager vos coordonnées</div>
-                                        </div>
-                                    </div>
+                <!-- Titre et texte sans encadrement au-dessus des options -->
+                <h1 class="main-title">LIVRE D'OR</h1>
+                <div class="testimony-text">
+                    <p>🙏 Partagez votre témoignage avec nous ✨</p>
+                    <p class="small-text">Votre expérience, vos encouragements et vos prières sont précieux pour notre ministère. Chaque témoignage nous fortifie dans notre mission.</p>
+                </div>
+                
+                <div class="content-section">
+                    <section class="form-section">
+                        <div class="form-options">
+                            <!-- Option 1 - Sans photo -->
+                            <div class="option-card no-photo-option">
+                                <div class="corner-top-right"></div>
+                                <div class="corner-bottom-left"></div>
+                                <div class="option-header">
+                                    <span class="option-badge-icon">
+                                        <i class="fas fa-comment-alt fa-2x"></i>
+                                    </span>
                                 </div>
                                 
-                                <!-- Option 2 - Avec photo -->
-                                <div class="option-card with-photo-option">
-                                    <div class="corner-top-right"></div>
-                                    <div class="corner-bottom-left"></div>
-                                    <div class="option-header">
-                                        <span class="option-badge-icon">
-                                            <i class="fas fa-camera fa-2x"></i>
-                                        </span>
-                                    </div>
-                                    
-                                    <!-- Titre cliquable avec le texte demandé -->
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="clickable-title">
-                                        Partage AVEC PHOTO <br><small>(Connection google requise)</small> <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                    
-                                    <div class="action-buttons">
-                                        <button class="more-info-btn" onclick="toggleDetails(this)">
-                                            <i class="fas fa-chevron-down"></i> Plus d'infos
-                                        </button>
-                                    </div>
-                                    
-                                    <div class="option-details">
-                                        <div class="details-content">
-                                            <div class="detail-item">Avec photo - Ajoutez une image mémorable</div>
-                                            <div class="detail-item">Connexion Google requise pour l'upload</div>
-                                            <div class="detail-item">Option : rester anonyme</div>
-                                            <div class="detail-item">Option : partager vos coordonnées</div>
-                                        </div>
+                                <!-- Titre cliquable -->
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="clickable-title">
+                                    Partage SANS PHOTO <br><small>(sans connection google)</small> <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <div class="action-buttons">
+                                    <button class="more-info-btn" onclick="toggleDetails(this)">
+                                        <i class="fas fa-chevron-down"></i> Plus d'infos
+                                    </button>
+                                </div>
+                                
+                                <div class="option-details">
+                                    <div class="details-content">
+                                        <div class="detail-item">Sans connexion - Rapide et simple</div>
+                                        <div class="detail-item">Sans photo - Partagez juste votre message</div>
+                                        <div class="detail-item">Option : rester anonyme</div>
+                                        <div class="detail-item">Option : partager vos coordonnées</div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                    </div>
+                            
+                            <!-- Option 2 - Avec photo -->
+                            <div class="option-card with-photo-option">
+                                <div class="corner-top-right"></div>
+                                <div class="corner-bottom-left"></div>
+                                <div class="option-header">
+                                    <span class="option-badge-icon">
+                                        <i class="fas fa-camera fa-2x"></i>
+                                    </span>
+                                </div>
+                                
+                                <!-- Titre cliquable -->
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="clickable-title">
+                                    Partage AVEC PHOTO <br><small>(Connection google requise)</small> <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <div class="action-buttons">
+                                    <button class="more-info-btn" onclick="toggleDetails(this)">
+                                        <i class="fas fa-chevron-down"></i> Plus d'infos
+                                    </button>
+                                </div>
+                                
+                                <div class="option-details">
+                                    <div class="details-content">
+                                        <div class="detail-item">Avec photo - Ajoutez une image mémorable</div>
+                                        <div class="detail-item">Connexion Google requise pour l'upload</div>
+                                        <div class="detail-item">Option : rester anonyme</div>
+                                        <div class="detail-item">Option : partager vos coordonnées</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
                 
                 <div class="contacts-section">
@@ -1170,81 +1151,79 @@
                     </div>
                 </div>
                 
-                <div class="main-content-row">
-                    <div class="title-section">
-                        <h1 class="main-title">GUESTBOOK</h1>
-                        <div class="testimony-text">
-                            🙏 Share your testimony with us ✨
-                        </div>
-                    </div>
-                    
-                    <div class="content-section">
-                        <section class="form-section">
-                            <div class="form-options">
-                                <!-- Option 1 - Without photo -->
-                                <div class="option-card no-photo-option">
-                                    <div class="corner-top-right"></div>
-                                    <div class="corner-bottom-left"></div>
-                                    <div class="option-header">
-                                        <span class="option-badge-icon">
-                                            <i class="fas fa-comment-alt fa-2x"></i>
-                                        </span>
-                                    </div>
-                                    
-                                    <!-- Clickable title with requested text -->
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Share WITHOUT PHOTO <br><small>(no google connection)</small> <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                    
-                                    <div class="action-buttons">
-                                        <button class="more-info-btn" onclick="toggleDetails(this)">
-                                            <i class="fas fa-chevron-down"></i> More info
-                                        </button>
-                                    </div>
-                                    
-                                    <div class="option-details">
-                                        <div class="details-content">
-                                            <div class="detail-item">No connection - Quick and simple</div>
-                                            <div class="detail-item">No photo - Just share your message</div>
-                                            <div class="detail-item">Option: remain anonymous</div>
-                                            <div class="detail-item">Option: share your contact details</div>
-                                        </div>
-                                    </div>
+                <!-- Titre et texte sans encadrement au-dessus des options -->
+                <h1 class="main-title">GUESTBOOK</h1>
+                <div class="testimony-text">
+                    <p>🙏 Share your testimony with us ✨</p>
+                    <p class="small-text">Your experience, encouragements and prayers are valuable to our ministry. Each testimony strengthens us in our mission.</p>
+                </div>
+                
+                <div class="content-section">
+                    <section class="form-section">
+                        <div class="form-options">
+                            <!-- Option 1 - Without photo -->
+                            <div class="option-card no-photo-option">
+                                <div class="corner-top-right"></div>
+                                <div class="corner-bottom-left"></div>
+                                <div class="option-header">
+                                    <span class="option-badge-icon">
+                                        <i class="fas fa-comment-alt fa-2x"></i>
+                                    </span>
                                 </div>
                                 
-                                <!-- Option 2 - With photo -->
-                                <div class="option-card with-photo-option">
-                                    <div class="corner-top-right"></div>
-                                    <div class="corner-bottom-left"></div>
-                                    <div class="option-header">
-                                        <span class="option-badge-icon">
-                                            <i class="fas fa-camera fa-2x"></i>
-                                        </span>
-                                    </div>
-                                    
-                                    <!-- Clickable title with requested text -->
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Share WITH PHOTO <br><small>(Google connection required)</small> <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                    
-                                    <div class="action-buttons">
-                                        <button class="more-info-btn" onclick="toggleDetails(this)">
-                                            <i class="fas fa-chevron-down"></i> More info
-                                        </button>
-                                    </div>
-                                    
-                                    <div class="option-details">
-                                        <div class="details-content">
-                                            <div class="detail-item">With photo - Add a memorable image</div>
-                                            <div class="detail-item">Google connection required for upload</div>
-                                            <div class="detail-item">Option: remain anonymous</div>
-                                            <div class="detail-item">Option: share your contact details</div>
-                                        </div>
+                                <!-- Clickable title -->
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="clickable-title">
+                                    Share WITHOUT PHOTO <br><small>(no google connection)</small> <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <div class="action-buttons">
+                                    <button class="more-info-btn" onclick="toggleDetails(this)">
+                                        <i class="fas fa-chevron-down"></i> More info
+                                    </button>
+                                </div>
+                                
+                                <div class="option-details">
+                                    <div class="details-content">
+                                        <div class="detail-item">No connection - Quick and simple</div>
+                                        <div class="detail-item">No photo - Just share your message</div>
+                                        <div class="detail-item">Option: remain anonymous</div>
+                                        <div class="detail-item">Option: share your contact details</div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                    </div>
+                            
+                            <!-- Option 2 - With photo -->
+                            <div class="option-card with-photo-option">
+                                <div class="corner-top-right"></div>
+                                <div class="corner-bottom-left"></div>
+                                <div class="option-header">
+                                    <span class="option-badge-icon">
+                                        <i class="fas fa-camera fa-2x"></i>
+                                    </span>
+                                </div>
+                                
+                                <!-- Clickable title -->
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="clickable-title">
+                                    Share WITH PHOTO <br><small>(Google connection required)</small> <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <div class="action-buttons">
+                                    <button class="more-info-btn" onclick="toggleDetails(this)">
+                                        <i class="fas fa-chevron-down"></i> More info
+                                    </button>
+                                </div>
+                                
+                                <div class="option-details">
+                                    <div class="details-content">
+                                        <div class="detail-item">With photo - Add a memorable image</div>
+                                        <div class="detail-item">Google connection required for upload</div>
+                                        <div class="detail-item">Option: remain anonymous</div>
+                                        <div class="detail-item">Option: share your contact details</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
                 
                 <div class="contacts-section">
