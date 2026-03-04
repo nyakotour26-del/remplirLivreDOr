@@ -267,7 +267,7 @@
             margin-bottom: 15px;
         }
         
-        /* Style simple pour la photo - image pleine largeur */
+        /* Style photo pleine largeur */
         .photo-section {
             display: flex;
             flex-direction: column;
@@ -299,16 +299,6 @@
             object-fit: contain;
             display: block;
             background-color: #f5f0e6;
-        }
-        
-        .photo-caption {
-            text-align: center;
-            font-family: 'Dancing Script', cursive;
-            font-weight: bold;
-            color: #8B4513;
-            font-size: 1.2rem;
-            margin-top: 8px;
-            font-style: italic;
         }
         
         .title-section {
@@ -382,7 +372,7 @@
         .option-card {
             background: rgba(255, 253, 242, 0.95);
             border-radius: 16px;
-            padding: 15px;
+            padding: 18px;
             box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
             transition: all 0.3s ease;
             position: relative;
@@ -391,38 +381,37 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
-            min-height: 160px;
         }
 
         .option-card::before, .option-card::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             border: 2px solid #DAA520;
             z-index: 2;
         }
 
         .option-card::before {
-            top: 8px;
-            left: 8px;
+            top: 10px;
+            left: 10px;
             border-right: none;
             border-bottom: none;
         }
 
         .option-card::after {
-            bottom: 8px;
-            right: 8px;
+            bottom: 10px;
+            right: 10px;
             border-left: none;
             border-top: none;
         }
 
         .option-card .corner-top-right {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 20px;
-            height: 20px;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
             border: 2px solid #DAA520;
             border-left: none;
             border-bottom: none;
@@ -431,10 +420,10 @@
 
         .option-card .corner-bottom-left {
             position: absolute;
-            bottom: 8px;
-            left: 8px;
-            width: 20px;
-            height: 20px;
+            bottom: 10px;
+            left: 10px;
+            width: 25px;
+            height: 25px;
             border: 2px solid #DAA520;
             border-right: none;
             border-top: none;
@@ -450,55 +439,40 @@
         }
         
         .option-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(139, 69, 19, 0.25);
         }
         
         .option-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #DAA520;
+            margin-bottom: 10px;
         }
         
-        .option-type-badge {
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .option-badge-icon {
+            font-size: 1.5rem;
+            background: transparent;
+            color: #5a3921;
         }
         
-        .no-photo-option .option-type-badge {
+        .no-photo-option .option-badge-icon {
             color: #2E7D32;
         }
         
-        .with-photo-option .option-type-badge {
+        .with-photo-option .option-badge-icon {
             color: #C62828;
         }
         
-        .option-emoji {
-            font-size: 1.8rem;
-        }
-        
-        .no-photo-option .option-emoji {
-            color: #2E7D32;
-        }
-        
-        .with-photo-option .option-emoji {
-            color: #C62828;
-        }
-        
-        /* Titres cliquables - simplifiés */
+        /* Titres cliquables - mis en évidence */
         .clickable-title {
             display: block;
             text-decoration: none;
             color: inherit;
-            margin: 8px 0 10px;
-            padding: 10px 12px;
-            border-radius: 8px;
-            background-color: rgba(255, 253, 242, 0.9);
+            margin: 0 0 12px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 253, 242, 0.8);
             border: 2px solid transparent;
             transition: all 0.3s ease;
             font-weight: 600;
@@ -509,19 +483,19 @@
         }
         
         .no-photo-option .clickable-title {
-            border-left: 4px solid #2E7D32;
+            border-left: 5px solid #2E7D32;
             color: #2E7D32;
         }
         
         .with-photo-option .clickable-title {
-            border-left: 4px solid #C62828;
+            border-left: 5px solid #C62828;
             color: #C62828;
         }
         
         .clickable-title:hover {
             background-color: #FFEC8B;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.15);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
             border: 2px solid #DAA520;
         }
         
@@ -538,7 +512,8 @@
         .action-buttons {
             display: flex;
             align-items: center;
-            margin-top: auto;
+            gap: 10px;
+            margin: 5px 0 0;
             width: 100%;
         }
         
@@ -580,30 +555,30 @@
             transition: max-height 0.4s ease-out, margin 0.3s ease;
             margin: 0;
             background-color: rgba(255, 253, 242, 0.7);
-            border-radius: 8px;
+            border-radius: 10px;
             width: 100%;
         }
         
         .option-details.show {
-            max-height: 250px;
-            margin: 10px 0 0;
+            max-height: 300px;
+            margin: 15px 0 0;
             overflow-y: auto;
         }
         
         .details-content {
-            padding: 10px;
+            padding: 12px;
             border-left: 3px solid #DAA520;
             background-color: rgba(255, 253, 242, 0.9);
-            border-radius: 6px;
+            border-radius: 8px;
         }
         
         .detail-item {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: #5a3921;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.3;
-            padding-left: 18px;
+            padding-left: 20px;
             position: relative;
         }
         
@@ -612,7 +587,7 @@
             color: #DAA520;
             font-weight: bold;
             position: absolute;
-            left: 4px;
+            left: 5px;
         }
         
         .contacts-section {
@@ -707,6 +682,33 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(139, 69, 19, 0.2);
         }
+
+        /* Style pour la photo dans la page de sélection de langue */
+        .language-photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .language-photo-frame {
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid #DAA520;
+        }
+        
+        .language-photo-img {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: contain;
+            display: block;
+            background-color: #f5f0e6;
+        }
         
         @media (min-width: 600px) and (max-width: 1023px) {
             .flags-column {
@@ -727,7 +729,7 @@
             
             .option-card {
                 flex: 1;
-                min-height: 180px;
+                min-height: 220px;
             }
             
             .simple-frame {
@@ -785,7 +787,7 @@
             
             .option-card {
                 flex: 1;
-                min-height: 180px;
+                min-height: 220px;
             }
             
             .contact-links {
@@ -874,6 +876,10 @@
                 max-width: 350px;
             }
             
+            .language-photo-frame {
+                max-width: 280px;
+            }
+            
             @media (max-width: 400px) {
                 .flags-column {
                     padding: 6px;
@@ -916,6 +922,10 @@
             
             .language-selector {
                 padding-top: 45px;
+            }
+            
+            .language-photo-frame {
+                max-width: 240px;
             }
         }
         
@@ -1019,6 +1029,13 @@
     <div class="main-content">
         <section class="language-selector" id="languageSelector">
             <div class="language-box">
+                <!-- Photo ajoutée dans la page de sélection de langue -->
+                <div class="language-photo">
+                    <div class="language-photo-frame">
+                        <img class="language-photo-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
+                    </div>
+                </div>
+                
                 <h1>Livre d'Or / Guestbook</h1>
                 <p>Groupe Ny ako Madagascar</p>
                 <p>Tournée Europe 2026</p>
@@ -1039,20 +1056,18 @@
         <!-- Page en français -->
         <section class="main-page" id="frenchPage" data-lang="fr">
             <div class="container">
-                <!-- Photo style simple - image pleine largeur -->
+                <!-- Photo pleine largeur sans légende -->
                 <div class="photo-section">
                     <div class="simple-frame">
                         <img class="simple-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
                     </div>
-                    <div class="photo-caption">✨ Toutes nos sources sont en Toi ✨</div>
                 </div>
                 
                 <div class="main-content-row">
                     <div class="title-section">
                         <h1 class="main-title">LIVRE D'OR</h1>
                         <div class="testimony-text">
-                            🙏 Partagez votre témoignage avec nous ✨<br><br>
-                            Votre expérience, vos encouragements et vos prières sont précieux pour notre ministère. Chaque témoignage nous fortifie dans notre mission.
+                            🙏 Partagez votre témoignage avec nous ✨
                         </div>
                     </div>
                     
@@ -1064,13 +1079,14 @@
                                     <div class="corner-top-right"></div>
                                     <div class="corner-bottom-left"></div>
                                     <div class="option-header">
-                                        <span class="option-type-badge">SANS PHOTO</span>
-                                        <span class="option-emoji">📝</span>
+                                        <span class="option-badge-icon">
+                                            <i class="fas fa-comment-alt fa-2x"></i>
+                                        </span>
                                     </div>
                                     
-                                    <!-- Titre cliquable simplifié -->
+                                    <!-- Titre cliquable avec le texte demandé -->
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Cliquez pour partager <i class="fas fa-arrow-right"></i>
+                                        Partage SANS PHOTO <br><small>(sans connection google)</small> <i class="fas fa-arrow-right"></i>
                                     </a>
                                     
                                     <div class="action-buttons">
@@ -1094,13 +1110,14 @@
                                     <div class="corner-top-right"></div>
                                     <div class="corner-bottom-left"></div>
                                     <div class="option-header">
-                                        <span class="option-type-badge">AVEC PHOTO</span>
-                                        <span class="option-emoji">📸</span>
+                                        <span class="option-badge-icon">
+                                            <i class="fas fa-camera fa-2x"></i>
+                                        </span>
                                     </div>
                                     
-                                    <!-- Titre cliquable simplifié -->
+                                    <!-- Titre cliquable avec le texte demandé -->
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="clickable-title">
-                                        Cliquez pour partager <i class="fas fa-arrow-right"></i>
+                                        Partage AVEC PHOTO <br><small>(Connection google requise)</small> <i class="fas fa-arrow-right"></i>
                                     </a>
                                     
                                     <div class="action-buttons">
@@ -1146,20 +1163,18 @@
         <!-- Page en anglais -->
         <section class="main-page" id="englishPage" data-lang="en">
             <div class="container">
-                <!-- Photo style simple - image pleine largeur -->
+                <!-- Photo pleine largeur sans légende -->
                 <div class="photo-section">
                     <div class="simple-frame">
                         <img class="simple-img" src="https://drive.google.com/thumbnail?id=1WTaKUXJsyq_86FQyz5SZms-Ejsd_a3ew&sz=w800" alt="Ny ako Madagascar">
                     </div>
-                    <div class="photo-caption">✨ Our source is in You ✨</div>
                 </div>
                 
                 <div class="main-content-row">
                     <div class="title-section">
                         <h1 class="main-title">GUESTBOOK</h1>
                         <div class="testimony-text">
-                            🙏 Share your testimony with us ✨<br><br>
-                            Your experience, encouragements and prayers are valuable to our ministry. Each testimony strengthens us in our mission.
+                            🙏 Share your testimony with us ✨
                         </div>
                     </div>
                     
@@ -1171,13 +1186,14 @@
                                     <div class="corner-top-right"></div>
                                     <div class="corner-bottom-left"></div>
                                     <div class="option-header">
-                                        <span class="option-type-badge">NO PHOTO</span>
-                                        <span class="option-emoji">📝</span>
+                                        <span class="option-badge-icon">
+                                            <i class="fas fa-comment-alt fa-2x"></i>
+                                        </span>
                                     </div>
                                     
-                                    <!-- Clickable title simplified -->
+                                    <!-- Clickable title with requested text -->
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Click to share <i class="fas fa-arrow-right"></i>
+                                        Share WITHOUT PHOTO <br><small>(no google connection)</small> <i class="fas fa-arrow-right"></i>
                                     </a>
                                     
                                     <div class="action-buttons">
@@ -1201,13 +1217,14 @@
                                     <div class="corner-top-right"></div>
                                     <div class="corner-bottom-left"></div>
                                     <div class="option-header">
-                                        <span class="option-type-badge">WITH PHOTO</span>
-                                        <span class="option-emoji">📸</span>
+                                        <span class="option-badge-icon">
+                                            <i class="fas fa-camera fa-2x"></i>
+                                        </span>
                                     </div>
                                     
-                                    <!-- Clickable title simplified -->
+                                    <!-- Clickable title with requested text -->
                                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="clickable-title">
-                                        Click to share <i class="fas fa-arrow-right"></i>
+                                        Share WITH PHOTO <br><small>(Google connection required)</small> <i class="fas fa-arrow-right"></i>
                                     </a>
                                     
                                     <div class="action-buttons">
