@@ -352,7 +352,7 @@
             position: relative;
         }
         
-        /* ===== STYLE LIVRE RÉALISTE CORRIGÉ ===== */
+        /* ===== STYLE LIVRE RÉALISTE ===== */
         .book-realistic {
             position: relative;
             width: 100%;
@@ -491,7 +491,7 @@
             border-radius: 50%;
         }
         
-        /* Marque-pages repositionnés pour ne pas cacher les données */
+        /* Marque-pages */
         .bookmark {
             position: absolute;
             top: -3px;
@@ -536,7 +536,7 @@
             transform: skewX(8deg);
         }
         
-        /* Style des liens dans le livre - vos liens cliquables */
+        /* Style des liens dans le livre - avec emoji doigt noir */
         .share-link {
             display: flex;
             align-items: center;
@@ -579,6 +579,23 @@
         .share-link span {
             line-height: 1.3;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .share-link .text-with-emoji {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .click-emoji {
+            font-size: 1.2rem;
+            color: #000000 !important; /* Noir forcé */
+            filter: none;
+            display: inline-block;
+            margin-left: 3px;
         }
         
         .share-link small {
@@ -597,7 +614,7 @@
             color: #C62828;
         }
         
-        /* Bouton Plus d'infos en bas - comme dans votre original */
+        /* Bouton Plus d'infos en bas */
         .action-buttons {
             margin-top: auto;
             width: 100%;
@@ -636,7 +653,7 @@
             transform: rotate(180deg);
         }
         
-        /* Détails qui s'étirent sans scrolling */
+        /* Détails */
         .option-details {
             max-height: 0;
             overflow: hidden;
@@ -678,7 +695,7 @@
             left: 5px;
         }
         
-        /* ===== NOUVEAU STYLE POUR LES CONTACTS ===== */
+        /* Contacts */
         .contacts-section {
             text-align: center;
             margin: 15px 0 10px;
@@ -733,9 +750,8 @@
             min-width: 140px;
         }
         
-        /* Couleurs officielles */
         .contact-link.facebook {
-            color: #1877f2; /* Bleu Facebook officiel */
+            color: #1877f2;
         }
         
         .contact-link.facebook i {
@@ -743,7 +759,7 @@
         }
         
         .contact-link.email {
-            color: #c71610; /* Rouge Gmail officiel */
+            color: #c71610;
         }
         
         .contact-link.email i {
@@ -764,20 +780,6 @@
         .contact-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
-        }
-        
-        .contact-link.facebook:hover {
-            background-color: #e7f0ff;
-            border-color: #1877f2;
-        }
-        
-        .contact-link.email:hover {
-            background-color: #ffe6e5;
-            border-color: #c71610;
-        }
-        
-        .contact-link.tour-link:hover {
-            background: linear-gradient(145deg, #FFEC8B, #FFD700);
         }
         
         .contact-link i {
@@ -803,12 +805,6 @@
             border: 2px solid #DAA520;
             font-family: 'Montserrat', sans-serif;
             box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
-        }
-        
-        .back-link a:hover {
-            background-color: #FFEC8B;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
         }
 
         .language-photo {
@@ -839,9 +835,6 @@
         
         /* Responsive */
         @media (min-width: 1024px) {
-            .book-leaf {
-                min-height: auto;
-            }
             .share-link {
                 font-size: 1.2rem;
             }
@@ -863,21 +856,10 @@
                 background: rgba(139, 69, 19, 0.9);
             }
             
-            .flags-column::before {
-                display: none;
-            }
-            
-            .flags-column .flag {
-                width: 28px;
-                height: 20px;
-                margin: 0 3px;
-            }
-            
             .main-content {
                 padding-top: 50px;
             }
             
-            /* Adaptation du livre en mobile */
             .book-content {
                 flex-direction: column;
                 gap: 10px;
@@ -890,16 +872,6 @@
             .book-leaf {
                 min-height: auto;
                 transform: none !important;
-                border: 1px solid rgba(218,165,32,0.3);
-                border-radius: 8px;
-            }
-            
-            .book-leaf.left {
-                border-right: 1px solid rgba(218,165,32,0.3);
-            }
-            
-            .book-leaf.right {
-                border-left: 1px solid rgba(218,165,32,0.3);
             }
             
             .book-spine-real {
@@ -907,20 +879,8 @@
                 width: 12px;
             }
             
-            .bookmark, .bookmark.green {
-                top: -2px;
-                width: 16px;
-                height: 30px;
-            }
-            
-            .bookmark::after {
-                bottom: -6px;
-                height: 6px;
-            }
-            
             .share-link {
                 font-size: 1rem;
-                padding: 5px 3px;
             }
             
             .share-link i {
@@ -928,12 +888,14 @@
                 width: 2rem;
             }
             
-            .option-details.show {
-                max-height: none;
-                overflow: visible;
+            .click-emoji {
+                font-size: 1rem;
             }
             
-            /* Contacts en ligne sur mobile aussi */
+            .option-details.show {
+                max-height: none;
+            }
+            
             .contact-links {
                 gap: 10px;
             }
@@ -941,40 +903,7 @@
             .contact-link {
                 min-width: auto;
                 padding: 8px 15px;
-                font-size: 0.85rem;
             }
-        }
-        
-        @media (max-width: 400px) {
-            .flags-column .flag {
-                width: 24px;
-                height: 18px;
-                margin: 0 2px;
-            }
-            .main-content {
-                padding-top: 45px;
-            }
-            .share-link {
-                font-size: 0.9rem;
-            }
-            .share-link i {
-                font-size: 1.6rem;
-                width: 1.8rem;
-            }
-            
-            .contact-link {
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .book-realistic {
-            animation: fadeIn 0.5s ease-out;
         }
     </style>
 </head>
@@ -1050,18 +979,24 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- LIVRE RÉALISTE avec marque-pages repositionnés -->
+                            <!-- LIVRE RÉALISTE -->
                             <div class="book-realistic">
                                 <div class="book-cover">
                                     <div class="book-spine-real"></div>
                                     <div class="book-pages">
                                         <div class="book-content">
-                                            <!-- Page de gauche : SANS PHOTO -->
+                                            <!-- Page de gauche : SANS PHOTO avec emoji doigt noir -->
                                             <div class="book-leaf left">
                                                 <div class="bookmark green"></div>
                                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6yaozp179sFPngu4Fz1aVPwp9tEnz-YwrV9lzQLkGUIX7MQ/viewform?usp=header" target="_blank" class="share-link">
                                                     <i class="fas fa-comment-alt"></i>
-                                                    <span>Partage SANS PHOTO <small>sans connexion google</small></span>
+                                                    <span>
+                                                        <span class="text-with-emoji">
+                                                            Partage SANS PHOTO 
+                                                            <span class="click-emoji">👆</span>
+                                                        </span>
+                                                        <small>sans connexion google</small>
+                                                    </span>
                                                 </a>
                                                 
                                                 <div class="action-buttons">
@@ -1080,12 +1015,18 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- Page de droite : AVEC PHOTO -->
+                                            <!-- Page de droite : AVEC PHOTO avec emoji doigt noir -->
                                             <div class="book-leaf right">
                                                 <div class="bookmark"></div>
                                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrJKU6QpRFo8ni9RVDBPUo8H-Wi-rJzxDXHQNWxoeC2LxL0A/viewform" target="_blank" class="share-link">
                                                     <i class="fas fa-camera"></i>
-                                                    <span>Partage AVEC PHOTO <small>Connection google requise</small></span>
+                                                    <span>
+                                                        <span class="text-with-emoji">
+                                                            Partage AVEC PHOTO 
+                                                            <span class="click-emoji">👆</span>
+                                                        </span>
+                                                        <small>Connection google requise</small>
+                                                    </span>
                                                 </a>
                                                 
                                                 <div class="action-buttons">
@@ -1115,15 +1056,12 @@
                 <div class="contacts-section">
                     <h3>Restons en contact</h3>
                     <div class="contact-links">
-                        <!-- Programme en premier -->
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
                             <i class="fas fa-calendar-alt"></i> <span>Programme</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
-                        <!-- Facebook avec couleur officielle -->
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link facebook">
                             <i class="fab fa-facebook"></i> <span>Facebook</span>
                         </a>
-                        <!-- Email avec couleur officielle Gmail -->
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link email">
                             <i class="fas fa-envelope"></i> <span>Email</span>
                         </a>
@@ -1157,18 +1095,24 @@
                 <div class="content-section">
                     <section class="form-section">
                         <div class="form-options">
-                            <!-- LIVRE RÉALISTE VERSION ANGLAISE -->
+                            <!-- LIVRE RÉALISTE VERSION ANGLAISE avec emoji doigt noir -->
                             <div class="book-realistic">
                                 <div class="book-cover">
                                     <div class="book-spine-real"></div>
                                     <div class="book-pages">
                                         <div class="book-content">
-                                            <!-- Page de gauche : WITHOUT PHOTO -->
+                                            <!-- Page de gauche : WITHOUT PHOTO with black finger emoji -->
                                             <div class="book-leaf left">
                                                 <div class="bookmark green"></div>
                                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSddniha6MImE833kx7YqoTlIw7uY64VAZjHb6adt64K1sFlrw/viewform?usp=header" target="_blank" class="share-link">
                                                     <i class="fas fa-comment-alt"></i>
-                                                    <span>Share WITHOUT PHOTO <small>no google connection</small></span>
+                                                    <span>
+                                                        <span class="text-with-emoji">
+                                                            Share WITHOUT PHOTO 
+                                                            <span class="click-emoji">👆</span>
+                                                        </span>
+                                                        <small>no google connection</small>
+                                                    </span>
                                                 </a>
                                                 
                                                 <div class="action-buttons">
@@ -1187,12 +1131,18 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- Page de droite : WITH PHOTO -->
+                                            <!-- Page de droite : WITH PHOTO with black finger emoji -->
                                             <div class="book-leaf right">
                                                 <div class="bookmark"></div>
                                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe_SQ6xObVzDfX4r68kCo3RiwXpKpeH3lwa_6DoGgJUSprAw/viewform?usp=header" target="_blank" class="share-link">
                                                     <i class="fas fa-camera"></i>
-                                                    <span>Share WITH PHOTO <small>Google connection required</small></span>
+                                                    <span>
+                                                        <span class="text-with-emoji">
+                                                            Share WITH PHOTO 
+                                                            <span class="click-emoji">👆</span>
+                                                        </span>
+                                                        <small>Google connection required</small>
+                                                    </span>
                                                 </a>
                                                 
                                                 <div class="action-buttons">
@@ -1222,15 +1172,12 @@
                 <div class="contacts-section">
                     <h3>Stay in touch</h3>
                     <div class="contact-links">
-                        <!-- Tour Program first -->
                         <a href="https://nyakotour26-del.github.io/publicprog-NyakoTour26/" target="_blank" class="contact-link tour-link">
                             <i class="fas fa-calendar-alt"></i> <span>Program</span> <i class="fas fa-star" style="font-size:0.8rem;"></i>
                         </a>
-                        <!-- Facebook with official color -->
                         <a href="https://www.facebook.com/profile.php?id=100063569177456" target="_blank" class="contact-link facebook">
                             <i class="fab fa-facebook"></i> <span>Facebook</span>
                         </a>
-                        <!-- Email with official Gmail color -->
                         <a href="mailto:nyakotour26@gmail.com" class="contact-link email">
                             <i class="fas fa-envelope"></i> <span>Email</span>
                         </a>
